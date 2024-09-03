@@ -50,6 +50,10 @@
     </section>
     <Footer />
   </div>
+  <NuxtPage/>
+  <main>
+      <NuxtLayout />
+    </main>
 </template>
 
 <script>
