@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }">
     <nav>
       <div class="logo">Los Pilines</div>
       <div class="nav-links">
@@ -15,9 +15,17 @@
   </header>
 </template>
 
+<script>
+export default {
+  props: {
+    isScrolled: Boolean
+  }
+};
+</script>
+
 <style scoped>
 header {
-  background-color: #009688;
+  background-color: rgba(0, 150, 136, 0.8); /* Color de fondo semitransparente */
   color: #fff;
   padding: 20px;
   width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
@@ -26,6 +34,15 @@ header {
   top: 0;
   left: 0;
   z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+  transition: background-color 0.3s; /* Suaviza la transición de color */
+}
+
+header.transparent {
+  background-color: rgba(0, 150, 136, 0); /* Hacer el header completamente transparente */
+}
+
+header.scrolled {
+  background-color: #009688; /* Cambia el color cuando se ha desplazado */
 }
 
 nav {
@@ -36,7 +53,6 @@ nav {
   margin: 0 auto; /* Centra el contenido dentro del header */
   width: 100%;
 }
-
 
 .logo {
   font-size: 24px;
@@ -92,3 +108,4 @@ body {
   padding-top: 80px; /* Ajusta el padding según la altura del header */
 }
 </style>
+  

@@ -1,19 +1,15 @@
 <template>
   <div>
-    <Header />
+    <Header :isScrolled="isScrolled" />
     <section id="inicio">
       <!-- Contenido para la sección de Inicio -->
       <video autoplay loop muted>
-        <source src="/Hermoso paisaje en el mar(video corto).mp4" type="video/mp4">
+        <source src="/costa-rica.mp4" type="video/mp4">
         Tu navegador no soporta el formato de video.
       </video>
     </section>
     <section id="quienes-somos">
       <!-- Contenido para la sección de ¿Quiénes somos? -->
-      <video autoplay loop muted>
-        <source src="/Hermoso paisaje en el mar(video corto).mp4" type="video/mp4">
-        Tu navegador no soporta el formato de video.
-      </video>
     </section>
     <section id="la-plataforma">
       <!-- Contenido para la sección de La plataforma -->
@@ -28,23 +24,45 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   components: {
     Header,
     Footer
+  },
+  setup() {
+    const isScrolled = ref(false);
+
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 50;
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+    return {
+      isScrolled
+    };
   }
 };
 </script>
 
 <style scoped>
-/* Estilos adicionales para cada sección */
 section {
-  padding: 50px;
-  min-height: 100vh; /* Altura mínima de cada sección */
+  padding: 0;
+  min-height: 100vh;
+  margin: 0;
 }
+
 video {
-  width: 100%; /* Ajusta el tamaño del video según sea necesario */
-  height: auto;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 </style>
