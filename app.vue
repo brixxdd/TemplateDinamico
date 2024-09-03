@@ -4,7 +4,7 @@
     <section id="inicio">
       <!-- Contenido para la sección de Inicio -->
       <video autoplay loop muted>
-        <source src="/costa-rica.mp4" type="video/mp4">
+        <source src="/costa rica.mp4" type="video/mp4">
         Tu navegador no soporta el formato de video.
       </video>
     </section>
