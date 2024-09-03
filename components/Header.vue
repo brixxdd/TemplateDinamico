@@ -1,15 +1,28 @@
 <template>
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }">
-    <nav>
-      <div class="logo">Los Pilines</div>
-      <div class="nav-links">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
-          <li><a href="#la-plataforma">La plataforma</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">Los Pilines</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#quienes-somos">¿Quiénes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#la-plataforma">La plataforma</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
         </ul>
-        <button class="btn-register">Regístrate</button>
+        <div class="ml-auto">
+          <button class="btn btn-register">Regístrate</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -27,7 +40,7 @@ export default {
 header {
   background-color: rgba(0, 150, 136, 0.8); /* Color de fondo semitransparente */
   color: #fff;
-  padding: 20px;
+  padding: 1px;
   width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
   box-sizing: border-box; /* Incluye el padding en el tamaño total del header */
   position: fixed; /* Mantiene el header fijo en la parte superior */
@@ -45,7 +58,7 @@ header.scrolled {
   background-color: #009688; /* Cambia el color cuando se ha desplazado */
 }
 
-nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,28 +67,23 @@ nav {
   width: 100%;
 }
 
-.logo {
+.navbar-brand {
   font-size: 24px;
   font-weight: bold;
+  margin-right: auto; /* Alinea el título a la izquierda */
 }
 
-.nav-links {
+.navbar-nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  margin-left: auto; /* Empuja los elementos del menú a la derecha */
 }
 
-ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+.nav-item {
+  margin-left: 20px; /* Espacio entre los elementos del menú */
 }
 
-li {
-  margin-right: 10px;
-}
-
-li a {
+.nav-link {
   background-color: #009688;
   color: white;
   padding: 10px 20px;
@@ -84,7 +92,7 @@ li a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-li a:hover {
+.nav-link:hover {
   background-color: #00796b;
 }
 
@@ -96,7 +104,7 @@ li a:hover {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-left: 10px;
+  margin-left: 20px; /* Espacio a la izquierda del botón de registro */
 }
 
 .btn-register:hover {
@@ -108,4 +116,3 @@ body {
   padding-top: 80px; /* Ajusta el padding según la altura del header */
 }
 </style>
-  
