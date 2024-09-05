@@ -1,24 +1,29 @@
 <template>
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">Los Pilines</a>
+      <a class="navbar-brand" href="/#">Los Pilines</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
+            <a class="nav-link" href="/#inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#quienes-somos">¿Quiénes somos?</a>
+            <a class="nav-link" href="/#quienes-somos">¿Quiénes somos?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#la-plataforma">La plataforma</a>
+            <a class="nav-link" href="/#la-plataforma">La plataforma</a>
           </li>
+
+          
           <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
+            <!--<a class="nav-link" href="/contact">Contacto</a>-->
+            <NuxtLink class="nav-link" to="/contact">Contacto</NuxtLink>
           </li>
+
+
         </ul>
         <div class="ml-auto">
           <button class="btn btn-register">Regístrate</button>
