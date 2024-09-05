@@ -55,3 +55,5 @@ bun run preview
 Check out the deployment documentation for more information.
 
 ya llego mena XD
+
+vere si puedo traer cosas
