@@ -1,0 +1,16 @@
+{
+    "header": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "scrolledBackgroundColor": "#009688",
+      "navLinkColor": "#ffffff",
+      "navLinkBackgroundColor": "#009688",
+      "navLinkHoverBackgroundColor": "#00796b",
+      "buttonRegisterBackgroundColor": "#009688",
+      "buttonRegisterHoverBackgroundColor": "#00796b"
+    },
+    "footer": {
+      "backgroundColor": "#29AAA0",
+      "textColor": "#ffffff"
+    }
+  }
+  

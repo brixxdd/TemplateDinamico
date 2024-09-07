@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }">
+  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Los Pilines</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,20 +8,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
+            <a class="nav-link" :style="navLinkStyle" href="#inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#quienes-somos">¿Quiénes somos?</a>
+            <a class="nav-link" :style="navLinkStyle" href="#quienes-somos">¿Quiénes somos?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#la-plataforma">La plataforma</a>
+            <a class="nav-link" :style="navLinkStyle" href="#la-plataforma">La plataforma</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
+            <a class="nav-link" :style="navLinkStyle" href="#contacto">Contacto</a>
           </li>
         </ul>
         <div class="ml-auto">
-          <button class="btn btn-register">Regístrate</button>
+          <button class="btn btn-register" :style="buttonRegisterStyle">Regístrate</button>
         </div>
       </div>
     </nav>
@@ -29,63 +29,80 @@
 </template>
 
 <script>
+import colors from '~/assets/styles/colors.json';
+
 export default {
   props: {
     isScrolled: Boolean
+  },
+  computed: {
+    headerStyle() {
+      return {
+        backgroundColor: this.isScrolled ? colors.header.scrolledBackgroundColor : colors.header.backgroundColor,
+      };
+    },
+    navLinkStyle() {
+      return {
+        backgroundColor: colors.header.navLinkBackgroundColor,
+        color: colors.header.navLinkColor,
+      };
+    },
+    buttonRegisterStyle() {
+      return {
+        backgroundColor: colors.header.buttonRegisterBackgroundColor,
+      };
+    }
   }
 };
 </script>
 
 <style scoped>
 header {
-  background-color: rgba(0, 150, 136, 0.8); /* Color de fondo semitransparente */
   color: #fff;
   padding: 1px;
-  width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
-  box-sizing: border-box; /* Incluye el padding en el tamaño total del header */
-  position: fixed; /* Mantiene el header fijo en la parte superior */
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-  transition: background-color 0.3s; /* Suaviza la transición de color */
+  z-index: 1000;
+  transition: background-color 0.3s;
 }
 
 header.transparent {
-  background-color: rgba(0, 150, 136, 0); /* Hacer el header completamente transparente */
+  background-color: transparent; /* Transparente por defecto */
 }
 
 header.scrolled {
-  background-color: #009688; /* Cambia el color cuando se ha desplazado */
+  /* El color se maneja desde el estilo dinámico en computed */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Limita el ancho máximo del contenido */
-  margin: 0 auto; /* Centra el contenido dentro del header */
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  margin-right: auto; /* Alinea el título a la izquierda */
+  margin-right: auto;
 }
 
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  margin-left: auto; /* Empuja los elementos del menú a la derecha */
+  margin-left: auto;
 }
 
 .nav-item {
-  margin-left: 20px; /* Espacio entre los elementos del menú */
+  margin-left: 20px;
 }
 
 .nav-link {
-  background-color: #009688;
-  color: white;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -93,26 +110,23 @@ header.scrolled {
 }
 
 .nav-link:hover {
-  background-color: #00796b;
+  background-color: var(--navLinkHoverBackgroundColor);
 }
 
 .btn-register {
-  background-color: #009688;
-  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-left: 20px; /* Espacio a la izquierda del botón de registro */
+  margin-left: 20px;
 }
 
 .btn-register:hover {
-  background-color: #00796b;
+  background-color: var(--buttonRegisterHoverBackgroundColor);
 }
 
-/* Ajuste para que el contenido no quede oculto bajo el header fijo */
 body {
-  padding-top: 80px; /* Ajusta el padding según la altura del header */
+  padding-top: 80px;
 }
 </style>

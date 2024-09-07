@@ -1,8 +1,23 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :style="footerStyle">
     <p>Mi Pie de Página</p>
   </footer>
 </template>
+
+<script>
+import colors from '~/assets/styles/colors.json';
+
+export default {
+  computed: {
+    footerStyle() {
+      return {
+        backgroundColor: colors.footer.backgroundColor,
+        color: colors.footer.textColor
+      };
+    }
+  }
+};
+</script>
 
 <style scoped>
 /* Estilos globales para el footer */
@@ -18,8 +33,6 @@ body {
 }
 
 .footer {
-  background-color: #29AAA0;
-  color: white;
   padding: 20px; /* Aumenta el padding para mayor espacio */
   text-align: center;
   width: 100%;
