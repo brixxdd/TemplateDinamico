@@ -5,12 +5,13 @@ export default defineNuxtConfig({
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
   ],
-  script: [
-    // Incluye los scripts necesarios para Bootstrap
-    { src: 'https://code.jquery.com/jquery-3.6.0.min.js', mode: 'client' },
-    { src: 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js', mode: 'client' },
-    { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js', mode: 'client' }
-  ],
+  app: {
+    head: {
+      script: [
+        { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', type: 'text/javascript', defer: true }
+      ]
+    }
+  },
   build: {
     transpile: [
       // Añadir aquí cualquier otra librería que quieras transpilar
