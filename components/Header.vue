@@ -1,7 +1,7 @@
 <template>
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">Los Pilines</a>
+      <a class="navbar-brand" href="#">DevPilots</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -104,9 +104,11 @@ header.scrolled {
 
 .nav-link {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 2px solid;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  border-color: #F57313;
 }
 
 .nav-link:hover {
