@@ -1,15 +1,15 @@
 {
     "header": {
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "scrolledBackgroundColor": "#009688",
-      "navLinkColor": "#ffffff",
-      "navLinkBackgroundColor": "#009688",
+      "scrolledBackgroundColor": "rgba(0, 0, 0, 0)",
+      "navLinkColor": "#ff5c35",
+      "navLinkBackgroundColor": "#ffffff",
       "navLinkHoverBackgroundColor": "#00796b",
-      "buttonRegisterBackgroundColor": "#009688",
+      "buttonRegisterBackgroundColor": "#F57313",
       "buttonRegisterHoverBackgroundColor": "#00796b"
     },
     "footer": {
-      "backgroundColor": "#29AAA0",
+      "backgroundColor": "#192733",
       "textColor": "#ffffff"
     }
   }
