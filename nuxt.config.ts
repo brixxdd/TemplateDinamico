@@ -4,7 +4,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
+    '~/assets/styles/global.css'
   ],
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/sweetalert2@11',
+          type: 'text/javascript'
+        }
+      ]
+    }
+  },
   script: [
     // Incluye los scripts necesarios para Bootstrap
     { src: 'https://code.jquery.com/jquery-3.6.0.min.js', mode: 'client' },
