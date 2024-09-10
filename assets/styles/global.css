@@ -1,4 +1,8 @@
 html {
-    scroll-behavior: smooth;
-  }
-  
+  scroll-behavior: smooth;
+}
+
+/* Si necesitas hacer algún ajuste a nivel global */
+body {
+  padding-top: 80px; /* Para evitar que el header fijo tape el contenido */
+}

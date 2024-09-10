@@ -1,7 +1,7 @@
 {
     "header": {
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "scrolledBackgroundColor": "rgba(0, 0, 0, 0)",
+      "scrolledBackgroundColor": "#F57313",
       "navLinkColor": "#ff5c35",
       "navLinkBackgroundColor": "#ffffff",
       "navLinkHoverBackgroundColor": "#00796b",
