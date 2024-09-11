@@ -50,22 +50,22 @@
         modules: [Pagination, Navigation, EffectCube],
         slides: [
           {
-            videoSrc: '/Video1.mp4',
+            videoSrc: '/cerillo.mp4',
             title: '¡Aplicaciones robustas y escalables con Java!',
             description: 'Especialistas en el desarrollo de aplicaciones empresariales y multiplataforma con alto rendimiento, utilizando uno de los lenguajes más populares del mundo.',
           },
           {
-            videoSrc: '/Video2.mp4',
+            videoSrc: '/cerillo.mp4',
             title: '¡Interfaz moderna con JavaScript!',
             description: 'Creamos experiencias de usuario dinámicas y modernas. Ideal para sitios web interactivos, landing pages, y aplicaciones web responsivas.',
           },
           {
-            videoSrc: '/Video3.mp4',
+            videoSrc: '/cerillo.mp4',
             title: '¡Impulsa tu idea en el ecosistema Apple con Swift!',
             description: 'Desarrollamos aplicaciones para iPhone y iPad, asegurando un rendimiento óptimo y una integración perfecta con todo el ecosistema de Apple.',
           },
           {
-            videoSrc: '/Video4.mp4',
+            videoSrc: '/cerillo.mp4',
             title: '¡Desarrollo nativo Android con Kotlin!',
             description: 'Transforma tus ideas en aplicaciones Android poderosas, con un lenguaje moderno y eficiente que es el futuro del desarrollo móvil.',
           },
