@@ -1,5 +1,6 @@
 <template>
   <footer class="footer" :style="footerStyle">
+<<<<<<< HEAD
     <div class="footer-section">
       <h4>¿QUÉ HACEMOS?</h4>
       <ul class="footer-list">
@@ -48,15 +49,17 @@
     <p class="footer-copyright">
       © {{ new Date().getFullYear() }} Devpilots. Todos los derechos reservados.
     </p>
+=======
+    <p>Mi Pie de Página</p>
+>>>>>>> parent of b6d75ae (Resolver conflictos en nuxt.config.ts)
   </footer>
 </template>
 
 <script>
 import colors from '~/assets/styles/colors.json';
-import ModalTerms from '~/components/ModalTerms.vue';
-import ModalPrivacy from '~/components/ModalPrivacy.vue';
 
 export default {
+<<<<<<< HEAD
   components: {
     ModalTerms,
     ModalPrivacy,
@@ -66,13 +69,35 @@ export default {
       return {
         backgroundColor: colors.footer.backgroundColor || '#2c3e50',
         color: colors.footer.textColor || '#ffffff',
+=======
+  computed: {
+    footerStyle() {
+      return {
+        backgroundColor: colors.footer.backgroundColor,
+        color: colors.footer.textColor
+>>>>>>> parent of b6d75ae (Resolver conflictos en nuxt.config.ts)
       };
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
+<<<<<<< HEAD
+=======
+/* Estilos globales para el footer */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la pantalla */
+}
+
+>>>>>>> parent of b6d75ae (Resolver conflictos en nuxt.config.ts)
 .footer {
   padding: 10px 2%;
   text-align: left;
@@ -116,6 +141,7 @@ export default {
   justify-content: flex-start;
 }
 
+<<<<<<< HEAD
 .social-icon {
   font-size: 1.5em; /* Tamaño aumentado */
   transition: transform 0.3s, color 0.3s;
@@ -227,6 +253,9 @@ export default {
   margin-top: 8px;
 }
 
+=======
+/* Asegura que el footer tenga un buen espaciado en pantallas más pequeñas */
+>>>>>>> parent of b6d75ae (Resolver conflictos en nuxt.config.ts)
 @media (max-width: 576px) {
   .footer {
     padding: 8px;
