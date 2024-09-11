@@ -3,15 +3,13 @@
     <Header :isScrolled="isScrolled" />
     <section id="inicio" class="bg-dark text-white text-center d-flex align-items-center justify-content-center position-relative" style="height: 100vh;">
       <!-- Contenido para la sección de Inicio -->
+      <!--
       <video autoplay loop muted class="w-100 h-100 object-fit-cover">
         <source src="/costa rica.mp4" type="video/mp4">
         Tu navegador no soporta el formato de video.
       </video>
-      <div class="overlay position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="display-4">Bienvenido a Nuestra Página</h1>
-        <p class="lead">Explora nuestra plataforma y aprende más sobre nosotros.</p>
-        <a href="#quienes-somos" class="btn btn-primary btn-lg">Conoce más</a>
-      </div>
+      -->
+      <HeroSlideshow />
     </section>
     <section id="quienes-somos" class="py-5 bg-light">
       <!-- Contenido para la sección de ¿Quiénes somos? -->
@@ -55,12 +53,14 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import HeroSlideshow from '@/components/HeroSlideshow.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    HeroSlideshow
   },
   setup() {
     const isScrolled = ref(false);
@@ -85,6 +85,8 @@ export default {
 </script>
 
 <style scoped>
+/* Estilos globales o específicos para app.vue */
+
 .overlay {
   position: absolute;
   top: 50%;
@@ -92,11 +94,16 @@ export default {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
+  z-index: 3; /* Asegura que el overlay se muestre por encima del video y slideshow */
 }
 
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Asegura que el video esté detrás del slideshow y overlay */
 }
 </style>
