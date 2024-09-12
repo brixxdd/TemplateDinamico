@@ -4,15 +4,11 @@
     
         <section id="inicio" class="bg-dark text-white text-center d-flex align-items-center justify-content-center position-relative" style="height: 100vh;">
         <!-- Contenido para la sección de Inicio -->
-        <video autoplay loop muted class="w-100 h-100 object-fit-cover">
+        <!-- <video autoplay loop muted class="w-100 h-100 object-fit-cover">
             <source src="/costa rica.mp4" type="video/mp4">
             Tu navegador no soporta el formato de video.
-        </video>
-        <div class="overlay position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="display-4">Bienvenido a Nuestra Página</h1>
-            <p class="lead">Explora nuestra plataforma y aprende más sobre nosotros.</p>
-            <a href="#quienes-somos" class="btn btn-primary btn-lg">Conoce más</a>
-        </div>
+        </video> -->
+        <HeroSlideshow />
         </section>
         
         <section id="quienes-somos" class="py-5 bg-light">

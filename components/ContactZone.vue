@@ -1,11 +1,10 @@
 <script setup>
-    import { ref, computed } from 'vue'
-    import { alertaExito} from '@/utils/alertas'
+    import { ref, computed, onMounted } from 'vue'
+    import { alertaExito, showAlertEmail} from '@/utils/alertas'
+    import colors from '~/assets/styles/colors.json';
 
     const form = ref({
         nombre: '',
-        apPaterno: '',
-        apMaterno: '',
         email: '',
         telefono: '',
         mensaje: ''
@@ -14,35 +13,38 @@
 
     const limpiarDatos = () => {
       form.value.nombre = ''
-      form.value.apPaterno = ''
-      form.value.apMaterno = ''
       form.value.email = ''
       form.value.telefono = ''
       form.value.mensaje = ''
     }
 
     const loading = ref(false) // Estado de carga
-    const emailError = ref('') // Error de validación de correo
+    const emailInput = ref(null);//ref para campo email
 
     // Computed para verificar si el email es válido
     const isEmailValid = computed(() => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const emailRegex = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/
+      console.log(form.value.email)
+      console.log(emailRegex.test(form.value.email))
       return emailRegex.test(form.value.email)
     })
 
+    const focusEmailInput = () => {
+      if (emailInput.value) {
+        emailInput.value.focus();
+      }
+    };
+
+
 
     const submitForm = () => {
+      console.log('Verificando formulario')
       //verificar email
       if (!isEmailValid.value) {
-        emailError.value = 'Por favor, ingresa un correo electrónico válido.'
-        // Eliminar el mensaje de error después de 2 segundos
-        setTimeout(() => {
-          emailError.value = ''
-        }, 2000)
-        return
+        showAlertEmail()
+        focusEmailInput()
+        return 
       }
-
-      emailError.value = '' // Limpiar el mensaje de error si el email es válido
 
       loading.value = true; // Mostrar el spinner
       setTimeout(() => {
@@ -55,6 +57,23 @@
       }, 2000); // Espera de 2 segundos
       
     }
+
+    
+
+    onMounted(() => {
+      const root = document.documentElement
+
+      // Definir variables CSS para la zona de contacto
+      root.style.setProperty('--contact-container-gradient1', colors.zoneContact['contact-container-backgroundColor-gradient1'])
+      root.style.setProperty('--contact-container-gradient2', colors.zoneContact['contact-container-backgroundColor-gradient2'])
+      root.style.setProperty('--contact-info-background-color', colors.zoneContact['contact-info-backgroundColor'])
+      root.style.setProperty('--text-principal-color', colors.zoneContact['textPrincipal'])
+      root.style.setProperty('--text-principal-border', colors.zoneContact['textPrincipal-borde'])
+      root.style.setProperty('--text-p', colors.zoneContact['texto-p'])
+      root.style.setProperty('--gradient1', colors.zoneContact['gradient1'])
+      root.style.setProperty('--gradient2', colors.zoneContact['gradient2'])
+      root.style.setProperty('--button', colors.zoneContact['button'])
+    })
 </script>
 
 <template>
@@ -74,7 +93,7 @@
           </p>
           <p class="paragraph-with-icon">
             <i class="fa-solid fa-at"></i>
-            pilines.oficial@example.com
+            devpilots.oficial@example.com
           </p>
         </div>
       </div>
@@ -92,12 +111,9 @@
             <label for="email">Email</label>
             <div class="input-with-icon">
               <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="email" v-model="form.email" required />
+              <input  id="email" v-model="form.email" ref="emailInput"  required/>
             </div>
-            <!-- Mostrar mensaje de error si el correo no es válido o está vacío -->
-            <p v-if="emailError" class="error-message">{{ emailError }}</p>
-            
-          </div>
+          </div> 
           <div class="form-group">
             <label for="telefono">Numero de telefono</label>
             <div class="input-with-icon">
@@ -134,41 +150,109 @@
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
-
     .contact-container {
       height: auto;
       width: 100%;
       display: flex;
       align-items: center;
-      *background: linear-gradient(rgba(0,0,0,0.5), rgba(234, 56, 56, 0.5)), url(/public/3.png);
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(234, 56, 56, 0.5));
+      *background: linear-gradient(var(--gradient1), var(--gradient2)), url(/public/3.png);
+      background: linear-gradient(rgba(8, 8, 8, 0.7),rgba(16, 7, 103, 0.5)),url(/public/binario.jpg);
       font-family: "Playpen Sans", cursive;
     }
 
     .contact-info{
       margin-left: 9rem;
       display: flex;
-      background-color: rgba(0, 150, 136, 0.9);
+      background-color: var(--contact-info-background-color);
       border-radius: 10px;
     }
     
     .textPrincipal{
       max-width: 600px;
-      background-color: rgba(0, 150, 136, 0.9);
+      background-color: transparent;
       text-align: center;
       border-radius: 10px;
       margin: 1rem;
       opacity: 0.8;
-      border: 2px solid rgb(228, 228, 228);
+      border: 2px solid var(--text-principal-border);
     }
 
-    button {
+
+    /* CSS */
+button {
+  padding: 10px 25px;
+  margin: 40px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+    /*button {
       padding: 10px 25px;
       border: none;
       font-size: 16px;
       border-radius: 50px;
       margin: 40px;
-      background: linear-gradient(to right, #6895c6,#007bff);
+      background: var(--button);
       color: #fff;
       cursor: pointer;
       box-shadow: 1px 1px 30px -12px #2f0bf7;
@@ -179,17 +263,22 @@
       background-color: #0056b3;
       box-shadow: 1px 1px 30px -6px #2f0bf7;
       opacity: 0.8;
-    }
+    }*/
 
     .contact-info h2{
       font-size: 40px;
       font-weight: 600;
-      color: #ffffff;
+      color: var(--text-p);
+    }
+
+    .contact-info h3{
+      color: var(--text-p);
     }
 
     .contact-info p{
       font-size: 20px;
       margin-top: 40px;
+      color: var(--text-p);
     }
 
     .textFormulario{
@@ -201,7 +290,7 @@
     }
     
     .contact-form {
-      background-color: rgba(0, 150, 136, 0.9);
+      background-color: var(--contact-info-background-color);
       width: 100%;
       height: auto;     
       border-radius: 10px;      
@@ -229,6 +318,8 @@
       color: #252424;
       transition: border-color 0.3s ease;
     }
+
+   
     
     input:focus, textarea:focus {
         border-color: #4e51fa;
@@ -264,7 +355,7 @@
     }
 
     .paragraph-with-icon i {
-      color: #fff; /* Color del ícono */
+      color: var(--text-p); /* Color del ícono */
       margin-right: 15px;
     }
 
@@ -282,8 +373,10 @@
 
     .spinner {
       border-radius: 40px;
-      color: #545454; /* Color del spinner */
-      
+      color: var(--text-p); /* Color del spinner */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 
@@ -299,7 +392,13 @@
       
     }
     /*------------------------------------------------------
-    aqui me quede arreglando lo responsive*/
+    aqui lo responsive*/
+    @media (min-width: 1199px) and (max-width: 1300px) {
+      .contact-info p{
+        font-size: 15px;
+      }
+    }
+
     @media (min-width: 1024px) and (max-width: 1199px) {
         .contact-container {
             flex-direction: column; /* Alinea la estructura en columna */
@@ -370,7 +469,7 @@
           pointer-events: none; /* Evita que el ícono interfiera con el clic en el input */
         }
     }
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 767.1px) and (max-width: 1024px) {
         /* Estilos para tablets */
         .contact-container {
             flex-direction: column; /* Alinea los elementos en columna para más espacio vertical */
@@ -502,7 +601,7 @@
 
     button {
         font-size: 12px; /* Tamaño más pequeño del texto en el botón */
-        padding: 8px 20px; /* Ajusta el tamaño de los botones */
+        padding: 10px 50px; /* Ajusta el tamaño de los botones */
         margin: 20px; /* Reduce el margen para que no ocupe demasiado espacio */
     }
 
@@ -528,8 +627,8 @@
 
     /* Spinner más compacto */
     .spinner {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
         margin: 0 auto;
     }
 }
@@ -597,7 +696,7 @@
 
     .input-with-icon i {
         right: 0px; /* Coloca el ícono más cerca del borde */
-        color: #4d4949;
+        color: var(--text-p);
     }
 
     button {
@@ -624,11 +723,12 @@
 
     .paragraph-with-icon i {
         margin-right: 5px; /* Ajuste del ícono */
+        
     }
 
     .spinner {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         margin: 0 auto;
     }
 }

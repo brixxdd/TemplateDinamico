@@ -14,12 +14,11 @@ export const alertaExito = () => {
     },
     //grow: 'row',
     backdrop: true,
-	timer: 4000,
-	timerProgressBar: true,
-	allowOutsideClick: false,
-	allowEscapeKey:false,
-	allowEnterKey: false,
-	stopKeydownPropagation: true,
+    timer: 4000,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+    allowEscapeKey:false,
+    stopKeydownPropagation: true,
   });
 }
 
@@ -44,3 +43,23 @@ export const alertaPersonalizada = (titulo, texto, icono) => {
   });
 }
 
+export const showAlertEmail = () => {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Correo electrónico no válido',
+    text: 'Por favor, ingrese un correo electrónico válido.',
+    confirmButtonText: 'O K',
+    //showConfirmButton: false,
+    customClass: {
+        popup: 'popup-class',
+        confirmButton: 'confirm-button' // Aplica una clase personalizada al botón
+    },
+    //grow: 'row',
+    backdrop: true,
+    timer: 3000,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+    allowEscapeKey:false,
+    stopKeydownPropagation: true,
+  });
+};

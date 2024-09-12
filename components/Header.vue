@@ -1,32 +1,34 @@
 <template>
-  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }">
+  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="/#">Los Pilines</a>
+      <a class="navbar-brand" href="/#">DevPilots</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/#inicio">Inicio</a>
+            <a class="nav-link" href="/#inicio"><span>Inicio</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#quienes-somos">¿Quiénes somos?</a>
+            <a class="nav-link" href="/#quienes-somos"><span>¿Quiénes somos?</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#la-plataforma">La plataforma</a>
+            <a class="nav-link" href="/#la-plataforma"><span>La plataforma</span></a>
           </li>
 
           
           <li class="nav-item">
             <!--<a class="nav-link" href="/contact">Contacto</a>-->
-            <NuxtLink class="nav-link" to="/contact">Contacto</NuxtLink>
+            <NuxtLink class="nav-link" to="/contact"><span>Contacto</span></NuxtLink>
           </li>
 
 
         </ul>
         <div class="ml-auto">
-          <button class="btn btn-register">Regístrate</button>
+          <button class="btn btn-register">
+            <span>Regístrate</span>
+          </button>
         </div>
       </div>
     </nav>
@@ -34,90 +36,136 @@
 </template>
 
 <script>
+import colors from '~/assets/styles/colors.json';
+
 export default {
   props: {
-    isScrolled: Boolean
-  }
-};
+      isScrolled: Boolean
+    },
+    computed: {
+      headerStyle() {
+        return {
+          backgroundColor: this.isScrolled ? colors.header.scrolledBackgroundColor : colors.header.backgroundColor,
+        };
+      }
+    }
+
+  };
 </script>
 
 <style scoped>
 header {
-  background-color: rgba(0, 150, 136, 0.8); /* Color de fondo semitransparente */
   color: #fff;
   padding: 1px;
-  width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
-  box-sizing: border-box; /* Incluye el padding en el tamaño total del header */
-  position: fixed; /* Mantiene el header fijo en la parte superior */
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-  transition: background-color 0.3s; /* Suaviza la transición de color */
+  z-index: 1000;
+  transition: background-color 0.3s;
 }
 
 header.transparent {
-  background-color: rgba(0, 150, 136, 0); /* Hacer el header completamente transparente */
+  background-color: transparent;
 }
 
 header.scrolled {
-  background-color: #009688; /* Cambia el color cuando se ha desplazado */
+  /* El color se maneja desde el estilo dinámico en computed */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Limita el ancho máximo del contenido */
-  margin: 0 auto; /* Centra el contenido dentro del header */
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  margin-right: auto; /* Alinea el título a la izquierda */
+  margin-right: auto;
 }
 
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  margin-left: auto; /* Empuja los elementos del menú a la derecha */
+  margin-left: auto;
 }
 
 .nav-item {
-  margin-left: 20px; /* Espacio entre los elementos del menú */
+  margin-left: 20px;
 }
 
 .nav-link {
-  background-color: #009688;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border: 0;
+  background-image: linear-gradient(
+    150deg,
+    #f12711,
+    #f5af19,
+    #00ddff
+  );
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.3s;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.nav-link:hover {
-  background-color: #00796b;
+.nav-link span {
+  background-color: #111;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-link:hover span {
+  background: none;
+}
+
+.nav-link:active {
+  transform: scale(0.9);
 }
 
 .btn-register {
-  background-color: #009688;
+  border: 0;
+  background-image: linear-gradient(
+    150deg,
+    #f12711,
+    #f5af19,
+    #00ddff
+  );
+  border-radius: 8px;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  display: flex;
+  font-size: 16px;
+  padding: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-left: 20px; /* Espacio a la izquierda del botón de registro */
+  transition: 0.3s;
 }
 
-.btn-register:hover {
-  background-color: #00796b;
+.btn-register span {
+  background-color: #111;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-/* Ajuste para que el contenido no quede oculto bajo el header fijo */
+.btn-register:hover span {
+  background: none;
+}
+
+.btn-register:active {
+  transform: scale(0.9);
+}
+
 body {
-  padding-top: 80px; /* Ajusta el padding según la altura del header */
+  padding-top: 80px;
 }
 </style>
