@@ -80,7 +80,7 @@
     <div class="contact-container">
       <div class="contact-info">
         <div class="textPrincipal">
-          <h2>Coctactanos</h2>
+          <h2>Contactanos</h2>
           <h3>¿Comó podemos ayudarte?</h3>
           <p>¿Necesitas hablar con nosotros?</p>
           <p class="paragraph-with-icon">

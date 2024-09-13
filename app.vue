@@ -1,7 +1,7 @@
 <template>
   <main>
-    <Header :isScrolled="isScrolled" />
-    
+    <Header :isScrolled="isScrolled" @open-register-modal="showModal = true" />
+    <RegisterModal :show="showModal" @update:show="showModal = false" />
     <NuxtPage/>
     <Footer />
   </main>
@@ -11,16 +11,19 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import HeroSlideshow from '@/components/HeroSlideshow.vue';
+import RegisterModal from '@/components/RegisterModal.vue'; // Asegúrate de importar tu modal aquí
 import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   components: {
     Header,
     Footer,
-    HeroSlideshow
+    HeroSlideshow,
+    RegisterModal, // Registro del modal
   },
   setup() {
     const isScrolled = ref(false);
+    const showModal = ref(false);
 
     const handleScroll = () => {
       isScrolled.value = window.scrollY > 50;
@@ -35,7 +38,8 @@ export default {
     });
 
     return {
-      isScrolled
+      isScrolled,
+      showModal,
     };
   }
 };

@@ -26,7 +26,7 @@
 
         </ul>
         <div class="ml-auto">
-          <button class="btn btn-register">
+          <button class="btn btn-register" @click="$emit('open-register-modal')">
             <span>Regístrate</span>
           </button>
         </div>
@@ -49,7 +49,6 @@ export default {
         };
       }
     }
-
   };
 </script>
 
