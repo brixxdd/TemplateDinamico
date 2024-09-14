@@ -2,12 +2,10 @@
 <template>
   <div>
     
-        <section id="inicio" class="bg-dark text-white text-center d-flex align-items-center justify-content-center position-relative" style="height: 100vh;">
+        <section id="inicio" 
+        class="bg-dark text-white text-center d-flex align-items-center justify-content-center position-relative" 
+        style="height: 100vh;">
         <!-- Contenido para la sección de Inicio -->
-        <!-- <video autoplay loop muted class="w-100 h-100 object-fit-cover">
-            <source src="/costa rica.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de video.
-        </video> -->
         <HeroSlideshow />
         </section>
         

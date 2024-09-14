@@ -2,11 +2,13 @@
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="/#">DevPilots</a>
+      <!-- Botón de menú (hamburguesa) visible solo en pantallas pequeñas -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Elementos del menú -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ms-auto"> <!-- Menú alineado a la derecha en pantallas grandes -->
           <li class="nav-item">
             <a class="nav-link" href="/#inicio"><span>Inicio</span></a>
           </li>
@@ -22,8 +24,12 @@
             <!--<a class="nav-link" href="/contact">Contacto</a>-->
             <NuxtLink class="nav-link" to="/contact"><span>Contacto</span></NuxtLink>
           </li>
-
-
+          <!-- Botón "Regístrate" en el menú desplegable -->
+          <li class="nav-item d-lg-none">
+            <button class="btn btn-register" @click="$emit('open-register-modal')">
+              <span>Regístrate</span>
+            </button>
+          </li>
         </ul>
         <!-- Botón "Regístrate" en pantallas grandes -->
         <div class="d-none d-lg-block ms-3">
