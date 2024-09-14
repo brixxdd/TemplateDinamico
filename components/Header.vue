@@ -25,7 +25,8 @@
 
 
         </ul>
-        <div class="ml-auto">
+        <!-- Botón "Regístrate" en pantallas grandes -->
+        <div class="d-none d-lg-block ms-3">
           <button class="btn btn-register" @click="$emit('open-register-modal')">
             <span>Regístrate</span>
           </button>
@@ -53,26 +54,26 @@ export default {
 </script>
 
 <style scoped>
+/* Estilos del header */
 header {
-  color: #fff;
-  padding: 1px;
-  width: 100%;
-  box-sizing: border-box;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   z-index: 1000;
+  color: #fff;
   transition: background-color 0.3s;
 }
 
+/* Clase dinámica cuando se ha hecho scroll */
 header.transparent {
   background-color: transparent;
 }
 
 header.scrolled {
-  /* El color se maneja desde el estilo dinámico en computed */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Estilos del navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -128,40 +129,62 @@ header.scrolled {
   background: none;
 }
 
-.nav-link:active {
-  transform: scale(0.9);
-}
-
+/* Botón "Regístrate" */
 .btn-register {
-  border: 0;
-  background-image: linear-gradient(
-    150deg,
-    #f12711,
-    #f5af19,
-    #00ddff
-  );
+  background-image: linear-gradient(150deg, #f12711, #f5af19, #00ddff);
   border-radius: 8px;
   color: #fff;
-  display: flex;
-  font-size: 16px;
-  padding: 4px;
+  padding: 8px 16px;
+  border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .btn-register span {
   background-color: #111;
   padding: 8px 16px;
   border-radius: 6px;
-  transition: 0.3s;
 }
 
 .btn-register:hover span {
   background: none;
 }
 
-.btn-register:active {
-  transform: scale(0.9);
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro sólido */
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 999; /* Superponer sobre otros elementos */
+    max-height: 80vh; /* Limitar la altura máxima del menú */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde inferior */
+    overflow-y: auto; /* Habilitar el scroll dentro del menú si es necesario */
+  }
+
+  .navbar-collapse.show {
+    position: fixed;
+    top: 80px; /* Ajustar según la altura de tu header */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9); /* Fondo sólido cuando el menú está abierto */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde inferior visible */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .btn-register {
+    margin-top: 20px;
+    width: 100%;
+  }
 }
 
 body {

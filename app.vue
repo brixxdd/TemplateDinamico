@@ -13,12 +13,14 @@ import Footer from '@/components/Footer.vue';
 import HeroSlideshow from '@/components/HeroSlideshow.vue';
 import RegisterModal from '@/components/RegisterModal.vue'; // Asegúrate de importar tu modal aquí
 import { ref, onMounted, onUnmounted } from 'vue';
+import WhoAreWe from './components/WhoAreWe.vue';
 
 export default {
   components: {
     Header,
     Footer,
     HeroSlideshow,
+    WhoAreWe,
     RegisterModal, // Registro del modal
   },
   setup() {

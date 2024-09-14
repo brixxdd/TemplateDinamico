@@ -12,11 +12,8 @@
         </section>
         
         <section id="quienes-somos" class="py-5 bg-light">
-        <!-- Contenido para la sección de ¿Quiénes somos? -->
-        <div class="container">
-            <h2 class="text-center mb-4">¿Quiénes Somos?</h2>
-            <p class="text-center">Aquí va una breve descripción sobre nosotros.</p>
-        </div>
+            <!-- Contenido para la sección de ¿Quiénes somos? -->
+            <WhoAreWe />
         </section>
 
 
