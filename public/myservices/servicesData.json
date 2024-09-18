@@ -1,0 +1,57 @@
+{
+    "frontEndServices": [
+      {
+        "title": "Desarrollo de Interfaces Responsivas",
+        "description": "Creación de interfaces de usuario que se adapten a cualquier dispositivo, ya sea móvil, tableta o escritorio.",
+        "image": "responsiveService.jpeg"
+      },
+      {
+        "title": "Optimización de Performance en Front-end",
+        "description": "Implementación de técnicas para mejorar la velocidad de carga y el rendimiento visual de las páginas web.",
+        "image": "performanceService.jpeg"
+      },
+      {
+        "title": "Desarrollo de Aplicaciones Web Progresivas (PWA)",
+        "description": "Creación de aplicaciones web que funcionan offline y ofrecen una experiencia similar a las aplicaciones nativas.",
+        "image": "offlineService.jpeg"
+      },
+      {
+        "title": "Integración de Diseño UX/UI Personalizado",
+        "description": "Desarrollo de interfaces atractivas y accesibles centradas en mejorar la experiencia del usuario.",
+        "image": "interfazAtractivaService.jpeg"
+      },
+      {
+        "title": "Desarrollo con Tecnologías Modernas (Vue, React, Angular)",
+        "description": "Implementación de soluciones front-end utilizando los frameworks más actuales y eficientes.",
+        "image": "tecnologias.jpg"
+      }
+    ],
+    "backEndServices": [
+      {
+        "title": "Desarrollo de API's RESTful y GraphQL",
+        "description": "Creación de servicios backend robustos y escalables para la comunicación entre el front-end y la base de datos.",
+        "image": "backendService.jpeg"
+      },
+      {
+        "title": "Gestión de Bases de Datos",
+        "description": "Diseño y optimización de bases de datos relacionales y no relacionales para un manejo eficiente de la información.",
+        "image": "bdServices.jpeg"
+      },
+      {
+        "title": "Despliegue y Mantenimiento de Servidores",
+        "description": "Configuración, mantenimiento y optimización de servidores y entornos de alojamiento.",
+        "image": "despliegueServidoresService.jpeg"
+      },
+      {
+        "title": "Desarrollo de Aplicaciones Escalables",
+        "description": "Creación de aplicaciones backend que puedan escalar fácilmente conforme crece el tráfico o la carga de datos.",
+        "image": "escalableService.jpeg"
+      },
+      {
+        "title": "Seguridad y Autenticación de Usuarios",
+        "description": "Implementación de sistemas de autenticación y autorización, garantizando la seguridad de la información de los usuarios.",
+        "image": "seguridadService.jpeg"
+      }
+    ]
+  }
+  

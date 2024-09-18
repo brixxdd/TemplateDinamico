@@ -18,11 +18,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/#la-plataforma"><span>La plataforma</span></a>
           </li>
-
-          
+          <!--Apartado de servicios-->
           <li class="nav-item">
-            <!--<a class="nav-link" href="/contact">Contacto</a>-->
-            <NuxtLink class="nav-link" to="/contact"><span>Contacto</span></NuxtLink>
+            <!--<NuxtLink class="nav-link" to="/services"><span>Servicios</span></NuxtLink>-->
+            <a class="nav-link"  href="/Services"><span>Servicios</span></a>
+          </li>
+          <!--Apartado de contacto-->
+          <li class="nav-item">
+            <a class="nav-link" href="/ContactZone"><span>Contacto</span></a>
+            <!--<NuxtLink class="nav-link" to="/contact"><span>Contacto</span></NuxtLink>-->
           </li>
           <!-- Botón "Regístrate" en el menú desplegable -->
           <li class="nav-item d-lg-none">
@@ -47,17 +51,18 @@ import colors from '~/assets/styles/colors.json';
 
 export default {
   props: {
-      isScrolled: Boolean
+    isScrolled: Boolean,
+  },
+  computed: {
+    headerStyle() {
+      return {
+        backgroundColor: this.isScrolled? colors.header.scrolledBackgroundColor: colors.header.backgroundColor,
+      };
     },
-    computed: {
-      headerStyle() {
-        return {
-          backgroundColor: this.isScrolled ? colors.header.scrolledBackgroundColor : colors.header.backgroundColor,
-        };
-      }
-    }
-  };
+  },
+};
 </script>
+
 
 <style scoped>
 /* Estilos del header */
