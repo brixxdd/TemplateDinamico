@@ -40,7 +40,10 @@
       "input-textarea-focus-hover-borderColor":"#4e51fa",
       "input-textarea-focus-":"",
       "input-with-icon-i-color-background-color":"#d3d2d2",
-      "input-with-icon-i-color-reducido-1199px":"#717172"
+      "input-with-icon-i-color-reducido-1199px":"#717172",
+      "icon-map":"fa-solid fa-map-pin",
+      "icon-cel":"fa-solid fa-phone-volume",
+      "icon-correo":"fa-solid fa-at"
     },
     "services": {
       "container-front-backgroundColor": "rgb(173, 225, 247,0.5)",

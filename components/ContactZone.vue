@@ -2,6 +2,7 @@
     import { ref, computed, onMounted } from 'vue'
     import { alertaExito, showAlertEmail} from '@/utils/alertas'
     import colors from '~/assets/styles/colors.json';
+    import  contacto  from '@/public/contacto/contacto.json'
 
     const form = ref({
         nombre: '',
@@ -58,48 +59,76 @@
       
     }
 
-    
+    // Aplicar los estilos dinámicos desde JSON
+    const styles = {
+      contactContainer: {
+        background: colors.zoneContact["contact-container-background"],
+      },
+      textPrincipal: {
+        color: colors.zoneContact['textPrincipal-background-color'],
+        border: `2px solid ${colors.zoneContact['textPrincipal-borde']}`
+      },
+      contactInfo:{
+        backgroundColor: colors.zoneContact['contact-info-backgroundColor']
+      },
+      paragraph: {
+        color: colors.zoneContact['texto-p']
+      },
+      button:{
+        color: colors.zoneContact['button-color']
+      }
+    };
 
     onMounted(() => {
       const root = document.documentElement
 
-      // Definir variables CSS para la zona de contacto
-      root.style.setProperty('--contact-container-gradient1', colors.zoneContact['contact-container-backgroundColor-gradient1'])
-      root.style.setProperty('--contact-container-gradient2', colors.zoneContact['contact-container-backgroundColor-gradient2'])
-      root.style.setProperty('--contact-info-background-color', colors.zoneContact['contact-info-backgroundColor'])
-      root.style.setProperty('--text-principal-color', colors.zoneContact['textPrincipal'])
-      root.style.setProperty('--text-principal-border', colors.zoneContact['textPrincipal-borde'])
-      root.style.setProperty('--text-p', colors.zoneContact['texto-p'])
-      root.style.setProperty('--gradient1', colors.zoneContact['gradient1'])
-      root.style.setProperty('--gradient2', colors.zoneContact['gradient2'])
-      root.style.setProperty('--button', colors.zoneContact['button'])
+      // Definir variables
+      root.style.setProperty('--gradient-colors', colors.zoneContact['button-gradientColors'])
+      root.style.setProperty('--button-after-background-color', colors.zoneContact['button-after-background'])
+      root.style.setProperty('--button-background-color', colors.zoneContact['button-background'])
+      root.style.setProperty('--label-color', colors.zoneContact['label-color'])
+      root.style.setProperty('--border-solid-color', colors.zoneContact['border-solid-color'])
+      root.style.setProperty('--input-textArea-color', colors.zoneContact['input-textArea-color'])
+      root.style.setProperty('--input-textArea-hover-borderColor', colors.zoneContact['input-textarea-focus-hover-borderColor'])
+      root.style.setProperty('--input-whit-icon-i-color', colors.zoneContact['input-with-icon-i-color'])
+      root.style.setProperty('--input-with-icon-i-color-background-color', colors.zoneContact['input-with-icon-i-color-background-color'])
+      root.style.setProperty('--input-with-icon-i-color-reducido-1199px', colors.zoneContact['input-with-icon-i-color-reducido-1199px'])
     })
+
+    // Clases de iconos
+    const icons = {
+      map: colors.zoneContact['icon-map'],
+      cel: colors.zoneContact['icon-cel'],
+      correo: colors.zoneContact['icon-correo']
+    };
+  
 </script>
 
 <template>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="textPrincipal">
-          <h2>Contactanos</h2>
-          <h3>¿Comó podemos ayudarte?</h3>
-          <p>¿Necesitas hablar con nosotros?</p>
-          <p class="paragraph-with-icon">
-            <i class="fa-solid fa-map-pin"></i>
-            Tapachula, Chiapas 30700
+    <div class="contact-container" :style="styles.contactContainer">
+      <div class="contact-info" :style="styles.contactInfo">
+        <div class="textPrincipal" :style="styles.textPrincipal">
+          <h2 :style="styles.paragraph">{{ contacto.title }}</h2>
+          <h3 :style="styles.paragraph">{{ contacto.subtitulo }}</h3>
+          <p :style="styles.paragraph">{{ contacto.p1 }}</p>
+          <p class="paragraph-with-icon" :style="styles.paragraph">
+            <i :class="icons.map"></i>
+            {{ contacto.direccion }}
           </p>
-          <p class="paragraph-with-icon">
-            <i class="fa-solid fa-phone-volume"></i>
-            +52 (962) 234-5678
+          <p class="paragraph-with-icon" :style="styles.paragraph">
+            <i :class="icons.cel"></i>
+            {{ contacto.celphone }}
           </p>
-          <p class="paragraph-with-icon">
-            <i class="fa-solid fa-at"></i>
-            devpilots.oficial@example.com
+
+          <p class="paragraph-with-icon" :style="styles.paragraph">
+            <i :class="icons.correo"></i>
+            {{ contacto.correo }}
           </p>
         </div>
       </div>
         
       <div class="textFormulario">
-        <form @submit.prevent="submitForm" class="contact-form">
+        <form @submit.prevent="submitForm" class="contact-form" :style="styles.contactInfo">
           <div class="form-group">
             <label for="nombre">Nombre</label>
             <div class="input-with-icon">
@@ -129,13 +158,13 @@
             </div>
           </div>
           <div class="button">
-            <button type="submit" v-if="!loading">
+            <button type="submit" v-if="!loading" :style="styles.button">
                 Enviar
                 <i class="fa-solid fa-paper-plane btn-icon"></i>
               <!-- <img src="/3.png" alt="Enviar" class="btn-icon"> -->
             </button>
             <div class="buttonv">
-              <div class="spinner" v-if="loading">
+              <div class="spinner" v-if="loading" :style="styles.paragraph">
                   <spinner />
               </div>
             </div>
@@ -156,129 +185,92 @@
       display: flex;
       align-items: center;
       *background: linear-gradient(var(--gradient1), var(--gradient2)), url(/public/3.png);
-      background: linear-gradient(rgba(8, 8, 8, 0.7),rgba(16, 7, 103, 0.5)),url(/public/binario.jpg);
       font-family: "Playpen Sans", cursive;
     }
 
     .contact-info{
       margin-left: 9rem;
       display: flex;
-      background-color: var(--contact-info-background-color);
       border-radius: 10px;
     }
     
     .textPrincipal{
       max-width: 600px;
-      background-color: transparent;
       text-align: center;
       border-radius: 10px;
       margin: 1rem;
       opacity: 0.8;
-      border: 2px solid var(--text-principal-border);
     }
 
 
     /* CSS */
-button {
-  padding: 10px 25px;
-  margin: 40px;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-button:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowing-button {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-button:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-    /*button {
+    button {
       padding: 10px 25px;
-      border: none;
-      font-size: 16px;
-      border-radius: 50px;
       margin: 40px;
-      background: var(--button);
-      color: #fff;
+      border: none;
+      outline: none;
+      background: var(--button-background-color);
       cursor: pointer;
-      box-shadow: 1px 1px 30px -12px #2f0bf7;
-      transition: all 300ms;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
     }
 
-    button:hover {
-      background-color: #0056b3;
-      box-shadow: 1px 1px 30px -6px #2f0bf7;
-      opacity: 0.8;
-    }*/
+    button:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        var(--gradient-colors)
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing-button {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    button:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--button-after-background-color);
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
 
     .contact-info h2{
       font-size: 40px;
       font-weight: 600;
-      color: var(--text-p);
-    }
-
-    .contact-info h3{
-      color: var(--text-p);
     }
 
     .contact-info p{
       font-size: 20px;
       margin-top: 40px;
-      color: var(--text-p);
     }
 
     .textFormulario{
@@ -290,7 +282,6 @@ button:after {
     }
     
     .contact-form {
-      background-color: var(--contact-info-background-color);
       width: 100%;
       height: auto;     
       border-radius: 10px;      
@@ -306,29 +297,29 @@ button:after {
       display: block;
       margin-bottom: 5px;
       margin-left: 35px;
-      color: #ffffff;
+      color: var(--label-color);
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
-      border: 2px solid #fafafa;
+      border: 2px solid var(--border-solid-color);
       border-radius: 10px;
-      background-color: #ffffff;
-      color: #252424;
+      background-color: var(--label-color);
+      color: var(--input-textArea-color);
       transition: border-color 0.3s ease;
     }
 
    
     
     input:focus, textarea:focus {
-        border-color: #4e51fa;
+        border-color: var(--input-textArea-hover-borderColor);
         outline: none;
-        background-color: #d3d2d2;
+        background-color: var(--input-with-icon-i-color-background-color);
     }
 
     input:hover, textarea:hover {
-        border-color: #4e51fa; /* Color del borde al pasar el mouse */
+        border-color: var(--input-textArea-hover-borderColor); /* Color del borde al pasar el mouse */
     }
     /* Agregando icon */
     .input-with-icon {
@@ -345,7 +336,7 @@ button:after {
     .input-with-icon i {
       position: absolute;
       right: 10px; /* Ajusta según tu preferencia */
-      color: #717172;
+      color: var(--input-whit-icon-i-color);
       pointer-events: none; /* Evita que el ícono interfiera con el clic en el input */
     }
 
@@ -373,24 +364,11 @@ button:after {
 
     .spinner {
       border-radius: 40px;
-      color: var(--text-p); /* Color del spinner */
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-
-    .error-message {
-      background-color: #be0707; /* Fondo rojo */
-      color: #ffffff; /* Letras blancas */
-      padding: 10px; /* Espaciado interno */
-      border-radius: 5px; /* Bordes redondeados */
-      font-size: 0.8rem; /* Tamaño de letra más pequeño */
-      margin-top: 5px; /* Espaciado superior */
-      text-align: center; /* Centrar el texto */
-      width: fit-content; /* Ajustar el ancho al contenido */
-      
-    }
     /*------------------------------------------------------
     aqui lo responsive*/
     @media (min-width: 1199px) and (max-width: 1300px) {
@@ -465,7 +443,7 @@ button:after {
         .input-with-icon i {
           position: absolute;
           right: 10px; /* Ajusta según tu preferencia */
-          color: #717172;
+          color: var(--input-with-icon-i-color-reducido-1199px);
           pointer-events: none; /* Evita que el ícono interfiera con el clic en el input */
         }
     }
@@ -538,6 +516,7 @@ button:after {
             padding: 8px;
         }
         .input-with-icon i {
+          color: var(--input-with-icon-i-color-reducido-1199px);
           right: 35px;
         }
     }
@@ -696,7 +675,7 @@ button:after {
 
     .input-with-icon i {
         right: 0px; /* Coloca el ícono más cerca del borde */
-        color: var(--text-p);
+        color: var(--label-color);
     }
 
     button {
