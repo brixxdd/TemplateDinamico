@@ -1,6 +1,7 @@
 <template>
-    <div v-if="show" class="modal fade show d-block" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+  <transition name="modal">
+    <div v-if="show" class="modal-overlay" @click="closeModal">
+      <div class="modal-wrapper" @click.stop>
         <div class="modal-content" :style="modalStyle">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
@@ -8,7 +9,7 @@
           </div>
           <div class="modal-body">
             <form @submit.prevent="handleSubmit">
-              <!-- Formulario de registro -->
+              <!-- El contenido del formulario permanece igual -->
               <div class="mb-3">
                 <label for="fullName" class="form-label">Nombre Completo</label>
                 <input type="text" class="form-control" id="fullName" v-model="form.fullName" required>
@@ -43,57 +44,92 @@
         </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      show: {
-        type: Boolean,
-        required: true,
-      },
+  </transition>
+</template>
+
+<script>
+export default {
+  props: {
+    show: {
+      type: Boolean,
+      required: true,
     },
-    data() {
+  },
+  data() {
+    return {
+      form: {
+        fullName: '',
+        email: '',
+        password: '',
+        gender: '',
+        phone: '',
+        terms: false,
+      },
+    };
+  },
+  methods: {
+    closeModal() {
+      this.$emit('update:show', false);
+    },
+    handleSubmit() {
+      // Aquí puedes manejar el envío del formulario
+      console.log(this.form);
+      this.closeModal();
+    },
+  },
+  computed: {
+    modalStyle() {
       return {
-        form: {
-          fullName: '',
-          email: '',
-          password: '',
-          gender: '',
-          phone: '',
-          terms: false,
-        },
+        zIndex: 1050,
       };
     },
-    methods: {
-      closeModal() {
-        this.$emit('update:show', false);
-      },
-      handleSubmit() {
-        // Aquí puedes manejar el envío del formulario
-        console.log(this.form);
-        this.closeModal();
-      },
+    closeButtonStyle() {
+      return {
+        zIndex: 1051,
+      };
     },
-    computed: {
-      modalStyle() {
-        return {
-          zIndex: 1050,
-        };
-      },
-      closeButtonStyle() {
-        return {
-          zIndex: 1051,
-        };
-      },
-    },
-  };
-  </script>
-  
-  <style scoped>
-  /* Estilos para el modal */
-  .modal-backdrop {
-    opacity: 0.8;
-  }
-  </style>
-  
+  },
+};
+</script>
+
+<style scoped>
+.modal-overlay {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+/* Animaciones para el modal */
+.modal-enter-active, .modal-leave-active {
+  transition: all 0.3s ease;
+}
+
+.modal-enter-from, .modal-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modal-enter-to, .modal-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
