@@ -14,10 +14,8 @@
   >
     <swiper-slide v-for="(slide, index) in slides" :key="index">
       <div class="slide-content">
-        <video class="slide-video" autoplay loop muted playsinline>
-          <source :src="slide.videoSrc" type="video/mp4">
-          Tu navegador no soporta el formato de video.
-        </video>
+        <!-- Cambié el video por imágenes -->
+        <img class="slide-image" :src="slide.imageSrc" alt="Imagen del slide" />
         <div class="slide-caption">
           <h2>{{ slide.title }}</h2>
           <p>{{ slide.description }}</p>
@@ -43,22 +41,22 @@ export default {
       modules: [EffectCube, Autoplay],
       slides: [
         {
-          videoSrc: '/Video1.mp4',
+          imageSrc: '/imagen1.jpg',
           title: '¡Aplicaciones robustas y escalables con Java!',
           description: 'Especialistas en el desarrollo de aplicaciones empresariales y multiplataforma con alto rendimiento, utilizando uno de los lenguajes más populares del mundo.',
         },
         {
-          videoSrc: '/Video2.mp4',
+          imageSrc: '/imagen2.jpg',
           title: '¡Interfaz moderna con JavaScript!',
           description: 'Creamos experiencias de usuario dinámicas y modernas. Ideal para sitios web interactivos, landing pages, y aplicaciones web responsivas.',
         },
         {
-          videoSrc: '/Video3.mp4',
+          imageSrc: '/imagen3.jpg',
           title: '¡Impulsa tu idea en el ecosistema Apple con Swift!',
           description: 'Desarrollamos aplicaciones para iPhone y iPad, asegurando un rendimiento óptimo y una integración perfecta con todo el ecosistema de Apple.',
         },
         {
-          videoSrc: '/Video4.mp4',
+          imageSrc: '/imagen4.jpg',
           title: '¡Desarrollo nativo Android con Kotlin!',
           description: 'Transforma tus ideas en aplicaciones Android poderosas, con un lenguaje moderno y eficiente que es el futuro del desarrollo móvil.',
         },
@@ -88,17 +86,15 @@ body {
 }
 
 .swiper {
-  width: 100%;
-  height: 100%;
+  width: 100%;  /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa todo el alto del contenedor */
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fff;
 }
 
 .slide-content {
@@ -107,22 +103,23 @@ body {
   height: 100%;
 }
 
-.slide-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.slide-image {
+  width: 100%;     /* Ocupa todo el ancho del contenedor */
+  height: 100%;    /* Ocupa todo el alto del contenedor */
+  object-fit: cover; /* Escala y recorta la imagen si es necesario, para llenar el contenedor */
   z-index: 1;
 }
 
 .slide-caption {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 20px;
+  left: 0;
+  right: 0;
   text-align: center;
   color: white;
-  z-index: 2;
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 10px;
+  z-index: 2;
 }
+
 </style>

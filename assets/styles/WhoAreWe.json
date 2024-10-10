@@ -1,24 +1,23 @@
 {
-    "description": "Nos especializamos en el desarrollo de software eficiente, accesible y de alta calidad. Crear soluciones tecnológicas innovadoras que transformen la experiencia del usuario.",
-    "features": [
-      {
-        "icon": "fas fa-cogs",
-        "title": "Desarrollo a la medida",
-        "description": "Creamos soluciones adaptadas a tus necesidades específicas con tecnología de vanguardia.",
-        "iconColor": "#4d1bc9"
-      },
-      {
-        "icon": "fas fa-tools",
-        "title": "Soporte constante",
-        "description": "Te acompañamos en cada paso del proceso con un equipo listo para resolver cualquier duda o desafío.",
-        "iconColor": "#25d366"
-      },
-      {
-        "icon": "fas fa-chart-line",
-        "title": "Mejora continua",
-        "description": "Innovamos continuamente para brindarte productos más eficientes y optimizados cada día.",
-        "iconColor": "#c13584"
-      }
-    ]
-  }
-  
+  "description": "Nos dedicamos a devolver la funcionalidad y eficiencia a tus dispositivos. Con experiencia en múltiples plataformas, ofrecemos soluciones rápidas y confiables para que puedas concentrarte en lo que realmente importa.",
+  "features": [
+    {
+      "icon": "fas fa-laptop",
+      "title": "Reparación Integral de Computadoras",
+      "description": "Ya sea Windows, Mac o Linux, restauramos el rendimiento óptimo de tu equipo con precisión y cuidado.",
+      "iconColor": "#0078d7"
+    },
+    {
+      "icon": "fas fa-mobile-alt",
+      "title": "Sistemas Operativos Móviles",
+      "description": "Solucionamos problemas en dispositivos Android y iOS, optimizando su funcionamiento para que siempre estén al máximo de su potencial.",
+      "iconColor": "#ff5722"
+    },
+    {
+      "icon": "fas fa-hands-helping",
+      "title": "Asistencia Técnica Personalizada",
+      "description": "Te acompañamos en cada etapa del proceso, asegurándonos de que tus dispositivos reciban la mejor atención y asesoría.",
+      "iconColor": "#28a745"
+    }
+  ]
+}

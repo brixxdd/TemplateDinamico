@@ -106,9 +106,9 @@ header.scrolled {
   border: 0;
   background-image: linear-gradient(
     150deg,
-    #f12711,
-    #f5af19,
-    #00ddff
+    #020242,  /* Azul oscuro */
+    #01257D,  /* Azul intermedio */
+    #00A9FF   /* Azul brillante complementario */
   );
   border-radius: 8px;
   color: #fff;
@@ -120,6 +120,7 @@ header.scrolled {
   transition: 0.3s;
   text-decoration: none;
 }
+
 
 .nav-link span {
   background-color: #111;
@@ -134,7 +135,7 @@ header.scrolled {
 
 /* Botón "Regístrate" */
 .btn-register {
-  background-image: linear-gradient(150deg, #f12711, #f5af19, #00ddff);
+  background-image: linear-gradient(150deg, #020242, #01257D, #00A9FF );
   border-radius: 8px;
   color: #fff;
   padding: 8px 16px;

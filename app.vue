@@ -11,14 +11,7 @@
     <section id="quienes-somos" class="py-5 bg-light">
       <!-- Contenido para la sección de ¿Quiénes somos? -->
       <WhoAreWe />
-    </section>
-    <section id="la-plataforma" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">La Plataforma</h2>
-        <p class="text-center">Información sobre la plataforma.</p>
-      </div>
-    </section>
-    
+    </section>    
     <!-- Añade el componente ContactZone aquí -->
     <ContactZone />
     
