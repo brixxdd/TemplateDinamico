@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
+    '@fortawesome/fontawesome-free/css/all.min.css'
   ],
   app: {
     head: {

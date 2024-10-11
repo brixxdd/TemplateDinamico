@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import colors from '~/assets/styles/colorsFooter.json';
+import colors from '@/public/data/colorsFooter.json';
 import ModalTerms from '~/components/ModalTerms.vue';
 import ModalPrivacy from '~/components/ModalPrivacy.vue';
 

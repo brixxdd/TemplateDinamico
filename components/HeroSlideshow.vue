@@ -17,8 +17,8 @@
         <!-- Cambié el video por imágenes -->
         <img class="slide-image" :src="slide.imageSrc" alt="Imagen del slide" />
         <div class="slide-caption">
-          <h2>{{ slide.title }}</h2>
-          <p>{{ slide.description }}</p>
+          <h2 class="slide-title">{{ slide.title }}</h2>
+          <p class="slide-description">{{ slide.description }}</p>
         </div>
       </div>
     </swiper-slide>
@@ -42,23 +42,23 @@ export default {
       slides: [
         {
           imageSrc: '/imagen1.jpg',
-          title: '¡Aplicaciones robustas y escalables con Java!',
-          description: 'Especialistas en el desarrollo de aplicaciones empresariales y multiplataforma con alto rendimiento, utilizando uno de los lenguajes más populares del mundo.',
+          title: '¡Revive tu Computadora!',
+          description: 'Dale una nueva vida a tu equipo con reparaciones profesionales y optimizaciones que mejoran su rendimiento y prolongan su vida útil.',
         },
         {
           imageSrc: '/imagen2.jpg',
-          title: '¡Interfaz moderna con JavaScript!',
-          description: 'Creamos experiencias de usuario dinámicas y modernas. Ideal para sitios web interactivos, landing pages, y aplicaciones web responsivas.',
+          title: '¡Soluciones Móviles para Cada Necesidad!',
+          description: 'Desde la reparación de smartphones hasta la actualización de software, aseguramos que tu dispositivo móvil funcione como nuevo.',
         },
         {
           imageSrc: '/imagen3.jpg',
-          title: '¡Impulsa tu idea en el ecosistema Apple con Swift!',
-          description: 'Desarrollamos aplicaciones para iPhone y iPad, asegurando un rendimiento óptimo y una integración perfecta con todo el ecosistema de Apple.',
+          title: '¡Recuperación de Datos Rápida y Segura!',
+          description: 'No pierdas la esperanza en tus archivos valiosos. Nuestros expertos utilizan técnicas avanzadas para recuperar datos perdidos de manera eficiente.',
         },
         {
           imageSrc: '/imagen4.jpg',
-          title: '¡Desarrollo nativo Android con Kotlin!',
-          description: 'Transforma tus ideas en aplicaciones Android poderosas, con un lenguaje moderno y eficiente que es el futuro del desarrollo móvil.',
+          title: '¡Mantén tu Software Actualizado!',
+          description: 'Te ayudamos a mantener tu sistema operativo y aplicaciones al día, garantizando la seguridad y el rendimiento óptimo de tus dispositivos.',
         },
       ],
     };
@@ -67,9 +67,17 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
+/* Estilos generales */
+body {
+  font-family: 'Playpen Sans', sans-serif; /* Aplicamos la nueva fuente aquí */
+}
+
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -78,7 +86,6 @@ body {
 
 body {
   background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -112,14 +119,29 @@ body {
 
 .slide-caption {
   position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
+  top: 50%;               /* Mueve el texto al centro verticalmente */
+  left: 50%;              /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para centrarlo completamente */
   text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   z-index: 2;
+  width: 80%;             /* Ajusta el ancho si es necesario */
+  max-width: 800px;       /* Limita el ancho para pantallas grandes */
 }
 
+.slide-title {
+  font-family: 'Playpen Sans', sans-serif; /* Aplicar la fuente específica al título */
+  font-size: 2rem; /* Tamaño del título */
+  font-weight: 800; /* Peso de la fuente */
+  margin: 0; /* Eliminar márgenes para mantener consistencia */
+}
+
+.slide-description {
+  font-family: 'Playpen Sans', sans-serif; /* Aplicar la fuente específica a la descripción */
+  font-size: 1rem; /* Tamaño de la descripción */
+  margin: 0; /* Eliminar márgenes para mantener consistencia */
+  color: #ffffff; /* Color de la descripción */
+}
 </style>
