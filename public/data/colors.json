@@ -1,0 +1,45 @@
+{
+  "header": {
+    "backgroundColor": "rgba(173, 216, 230, 0)",
+    "scrolledBackgroundColor": "#00aaff",
+    "navLinkColor": "#004466",
+    "navLinkBackgroundColor": "#ffffff",
+    "navLinkHoverBackgroundColor": "#0088cc",
+    "buttonRegisterBackgroundColor": "#00bfff",
+    "buttonRegisterHoverBackgroundColor": "#0077b3"
+  },
+  "zoneContact": {
+    "contact-container-backgroundColor-gradient1": "#f39654",
+    "contact-container-backgroundColor-gradient2": "#F57313",
+    "contact-info-backgroundColor": "rgba(25, 39, 51, 0.7)",
+    "textPrincipal": "rgba(0, 150, 136, 0.9)",
+    "textPrincipal-borde": "rgb(228, 228, 228)",
+    "texto-p": "#fafafa",
+    "gradient1": "rgba(245, 184, 87, 0.5)",
+    "gradient2": "rgba(246, 207, 10, 0.5)",
+    "button": "linear-gradient(to right, #6895c6,#007bff)"
+  },
+  "services": {
+    "Servicios Frontend": {
+      "backgroundColor": "rgb(173, 225, 247,0.5)"
+    },
+    "Servicios Backend": {
+      "backgroundColor": "rgb(241, 221, 183,0.5)"
+    },
+    "Servicios Fullstack": {
+      "backgroundColor": "rgba(227, 183, 241, 0.5)"
+    }
+  },
+  "card": {
+    "card-box-shadow": "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
+    "btn-primary-hover-backgroundColor": "rgb(253, 131, 86)",
+    "h5-color": "rgb(0, 91, 228)"
+  },
+  "whoAreWe": {
+    "backgroundColor": "#87CEEB",
+    "titleColor": "#333333",
+    "descriptionColor": "#555555",
+    "featureTitleColor": "#000000",
+    "featureDescriptionColor": "#444444"
+  }
+}

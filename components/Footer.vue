@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import colors from '~/assets/styles/colorsFooter.json';
+import colors from '@/public/data/colorsFooter.json';
 import ModalTerms from '~/components/ModalTerms.vue';
 import ModalPrivacy from '~/components/ModalPrivacy.vue';
 
@@ -76,98 +76,120 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  padding: 10px 2%;
-  text-align: left;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 5px;
-  margin-top: auto;
-}
-
-.footer-section {
-  flex: 1 1 150px;
-  min-width: 120px;
-  max-width: 200px;
-}
-
-.footer-section h4 {
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #d1d1d1;
-  font-size: 0.8em;
-}
-
-.footer-list li {
-  margin-bottom: 3px;
-}
-
-.social-links {
-  display: flex;
-  gap: 10px;
-  margin: 10px 0;
-  justify-content: flex-start;
-}
-
-.social-icon {
-  font-size: 1.5em;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.social-icon:hover {
-  transform: scale(1.15);
-  filter: brightness(1.2);
-}
-
-.footer-links {
-  text-align: center;
-  width: 100%;
-  font-size: 0.7em;
-  margin-top: 8px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  padding: 0 4px;
-  transition: color 0.3s, text-decoration 0.3s;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 0.75em;
-}
-
-.footer-section p {
-  margin: 5px 0;
-}
-
-.footer h4 {
-  margin: 5px 0;
-}
-
-.footer-copyright {
-  text-align: center;
-  width: 100%;
-  font-size: 0.6em;
-  margin-top: 8px;
-}
-
-@media (max-width: 576px) {
   .footer {
-    padding: 8px;
-    flex-direction: column;
-    align-items: center;
+    padding: 15px 2%;
+    text-align: center; /* Centrar todo el contenido del footer */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar las secciones dentro del contenedor */
+    gap: 15px;
+    margin-top: auto;
   }
+
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 150px;
+    max-width: 250px;
+    text-align: center; /* Centrar contenido de cada sección */
+  }
+
+  .footer-section h4 {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #d1d1d1;
+    font-size: 0.9em;
+  }
+
+  .footer-list li {
+    margin-bottom: 4px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Centrar los iconos de redes sociales */
+    margin-top: 10px;
+  }
+
   .social-icon {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    transition: transform 0.3s, color 0.3s;
   }
-}
+
+  .social-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+  }
+
+  .footer-links {
+    text-align: center;
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    padding: 0 6px;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 0.75em;
+  }
+
+  .footer-section p {
+    margin: 5px 0;
+  }
+
+  .footer h4 {
+    margin: 5px 0;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    width: 100%;
+    font-size: 0.65em;
+    margin-top: 8px;
+  }
+
+  /* Ajustes para pantallas medianas */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 12px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-section {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .social-icon {
+      font-size: 1.3em;
+    }
+  }
+
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 576px) {
+    .footer {
+      padding: 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-section {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .social-icon {
+      font-size: 1.2em;
+    }
+  }
 </style>

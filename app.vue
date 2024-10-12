@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Header :isScrolled="isScrolled" @open-register-modal="showModal = true" />
-    <RegisterModal :show="showModal" @update:show="showModal = false" />
+    <Header :isScrolled="isScrolled"/>
     <section id="inicio"
       class="bg-dark text-white text-center d-flex align-items-center justify-content-center position-relative"
       style="height: 100vh;">
@@ -12,16 +11,14 @@
       <!-- Contenido para la sección de ¿Quiénes somos? -->
       <WhoAreWe />
     </section>
-    <section id="la-plataforma" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">La Plataforma</h2>
-        <p class="text-center">Información sobre la plataforma.</p>
-      </div>
-    </section>
-    
     <!-- Añade el componente ContactZone aquí -->
-    <ContactZone />
-    
+    <section id="contacto" class="py-5">
+        <ContactZone />
+    </section>
+    <!-- Añade el componente servicios aquí -->
+    <section id="servicios" class="py-5  bg-light">     
+        <Services />
+    </section>   
     <Footer />
   </div>
 </template>
@@ -31,9 +28,10 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import HeroSlideshow from '@/components/HeroSlideshow.vue';
-import RegisterModal from '@/components/RegisterModal.vue'; // Asegúrate de importar tu modal aquí
 import WhoAreWe from '@/components/WhoAreWe.vue';
 import ContactZone from '@/components/ContactZone.vue'; // Importa ContactZone
+import Services from './components/Services.vue';
+
 
 export default {
   components: {
@@ -41,8 +39,8 @@ export default {
     Footer,
     HeroSlideshow,
     WhoAreWe,
-    RegisterModal, // Registro del modal
     ContactZone, // Registra el componente aquí
+    Services
   },
   setup() {
     const isScrolled = ref(false);

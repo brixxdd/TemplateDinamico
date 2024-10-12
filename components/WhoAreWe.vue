@@ -1,40 +1,60 @@
 <template>
-  <div class="whoarewe-container" v-scroll-observer>
+  <div class="whoarewe-container">
     <div class="image-content-wrapper animate-on-scroll">
       <div class="image-section">
-        <img src="/Compu2.png" alt="Laptop Image" />
+        <img src="/television1.png" alt="Imagen de Televisión" />
       </div>
       <div class="content-section">
-        <h1 class="section-title">Nosotros!!</h1>
-        <p class="section-description">{{ data.description }}</p>
+        <h1 class="section-title" :style="{ color: colors.titleColor }">Nosotros!!</h1>
+        <p class="section-description" :style="{ color: colors.descriptionColor }">{{ data.description }}</p>
       </div>
     </div>
     <div class="features">
       <div v-for="(feature, index) in data.features" :key="index" class="feature animate-on-scroll">
         <i :class="feature.icon" class="social-icon" :style="{ color: feature.iconColor }"></i>
         <div class="feature-text">
-          <h2>{{ feature.title }}</h2>
-          <p>{{ feature.description }}</p>
+          <h2 :style="{ color: colors.featureTitleColor }">{{ feature.title }}</h2>
+          <p :style="{ color: colors.featureDescriptionColor }">{{ feature.description }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import data from '@/assets/styles/WhoAreWe.json';
+<script setup>
+import { onMounted } from 'vue';
+import data from '@/public/data/WhoAreWe.json';
+import colors from '@/public/data/colors.json';
 
-export default {
-  name: 'WhoAreWe',
-  data() {
-    return {
-      data,
-    };
+onMounted(() => {
+  if (process.client) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
   }
-};
+});
 </script>
-<style>
+
+<style scoped>
 @import '@/assets/styles/WhoAreWe.css';
+
+.whoarewe-container {
+  padding: 20px;
+  background-color: #87CEEB; /* Color celeste */
+}
 
 .animate-on-scroll {
   opacity: 0;
@@ -46,33 +66,4 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Ajusta estos estilos según tus preferencias */
-.whoarewe-container {
-  overflow: hidden;
-}
-
-.image-content-wrapper {
-  transition-delay: 0.2s;
-}
-
-.feature {
-  transition-delay: 0.1s;
-}
-
-.feature:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.feature:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-/* Asegura que la transición se aplique en ambas direcciones */
-.animate-on-scroll,
-.animate-on-scroll.is-visible {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Puedes añadir más estilos específicos aquí si es necesario */
 </style>

@@ -1,0 +1,23 @@
+{
+  "description": "Nos especializamos en la reparación de televisores de manera rápida y eficiente. Ofrecemos soluciones técnicas que aseguran un funcionamiento óptimo de tu dispositivo.",
+  "features": [
+    {
+      "icon": "fas fa-tv",
+      "title": "Reparación a la medida",
+      "description": "Ofrecemos servicios personalizados para reparar tu televisión, desde pantallas rotas hasta problemas de hardware.",
+      "iconColor": "#4d1bc9"
+    },
+    {
+      "icon": "fas fa-wrench",
+      "title": "Soporte técnico",
+      "description": "Te brindamos asistencia continua durante y después de la reparación, asegurando que tu televisión funcione sin problemas.",
+      "iconColor": "#25d366"
+    },
+    {
+      "icon": "fas fa-sync-alt",
+      "title": "Mantenimiento preventivo",
+      "description": "Realizamos mejoras y mantenimiento preventivo para prolongar la vida útil de tu televisión.",
+      "iconColor": "#c13584"
+    }
+  ]
+}

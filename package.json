@@ -10,10 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.13.1",
+    "@nuxt/kit": "^3.13.2",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.13.2",
     "swiper": "^11.1.12",
     "vue": "latest",
     "vue-flux": "^7.0.0-beta.6"

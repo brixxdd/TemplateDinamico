@@ -24,6 +24,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
 /* Global CSS o en un archivo CSS de componente */
 body {
   width: 100%;
@@ -67,3 +69,5 @@ body {
 body {
   padding-top: 80px; /* Para evitar que el header fijo tape el contenido */
 }
+
+

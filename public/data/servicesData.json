@@ -1,0 +1,84 @@
+{
+  "categories": [
+    {
+      "categoryTitle": "Samsung",
+      "services": [
+        {
+          "title": "Reparación de Pantallas Samsung",
+          "description": "Solución de problemas en pantallas LED y OLED de televisores Samsung.",
+          "image": "samsungRepair.jpeg"
+        },
+        {
+          "title": "Actualización de Software Samsung",
+          "description": "Actualización del firmware y software para mejorar el rendimiento del televisor.",
+          "image": "samsungSoftware.jpeg"
+        },
+        {
+          "title": "Mantenimiento General Samsung",
+          "description": "Mantenimiento preventivo y correctivo de televisores Samsung para asegurar un funcionamiento óptimo.",
+          "image": "samsungMaintenance.jpeg"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "LG",
+      "services": [
+        {
+          "title": "Reparación de Pantallas LG",
+          "description": "Reparación de pantallas LED y OLED para televisores LG.",
+          "image": "lgRepair.jpeg"
+        },
+        {
+          "title": "Configuración de Smart TV LG",
+          "description": "Configuración avanzada de aplicaciones y sistemas de televisores LG para una mejor experiencia de usuario.",
+          "image": "lgSmartTV.jpeg"
+        },
+        {
+          "title": "Mantenimiento General LG",
+          "description": "Mantenimiento preventivo para televisores LG, mejorando su durabilidad y rendimiento.",
+          "image": "lgMaintenance.jpeg"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Sony",
+      "services": [
+        {
+          "title": "Reparación de Pantallas Sony",
+          "description": "Solución de problemas en pantallas LED y OLED de televisores Sony.",
+          "image": "sonyRepair.jpeg"
+        },
+        {
+          "title": "Actualización de Software Sony",
+          "description": "Actualización de software para mejorar la funcionalidad y seguridad de los televisores Sony.",
+          "image": "sonySoftware.jpeg"
+        },
+        {
+          "title": "Optimización de Imagen Sony",
+          "description": "Mejora en la calidad de imagen de televisores Sony a través de ajustes personalizados.",
+          "image": "sonyImageOptim.jpeg"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Hisense",
+      "services": [
+        {
+          "title": "Reparación de Pantallas Hisense",
+          "description": "Reparación de todo tipo de pantallas de televisores Hisense.",
+          "image": "hisenseRepair.jpeg"
+        },
+        {
+          "title": "Mantenimiento General Hisense",
+          "description": "Mantenimiento preventivo para prolongar la vida útil de los televisores Hisense.",
+          "image": "hisenseMaintenance.jpeg"
+        },
+        {
+          "title": "Optimización de Sonido Hisense",
+          "description": "Ajustes de sonido para mejorar la calidad acústica de televisores Hisense.",
+          "image": "hisenseSoundOptim.jpeg"
+        }
+      ]
+    }
+  ]
+}

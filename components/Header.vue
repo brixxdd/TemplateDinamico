@@ -16,31 +16,19 @@
             <a class="nav-link" href="#quienes-somos"><span>Nosotros</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#la-plataforma"><span>Servicios</span></a>
+            <a class="nav-link" href="#servicios"><span>Servicios</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacto"><span>Contacto</span></a>
-          </li>
-          <!-- Botón "Regístrate" en el menú desplegable -->
-          <li class="nav-item d-lg-none">
-            <button class="btn btn-register" @click="$emit('open-register-modal')">
-              <span>Regístrate</span>
-            </button>
-          </li>
+          </li>          
         </ul>
-        <!-- Botón "Regístrate" en pantallas grandes -->
-        <div class="d-none d-lg-block ms-3">
-          <button class="btn btn-register" @click="$emit('open-register-modal')">
-            <span>Regístrate</span>
-          </button>
-        </div>
       </div>
     </nav>
   </header>
 </template>
 
 <script>
-import colors from '~/assets/styles/colors.json';
+import colors from '@/public/data/colors.json';
 
 export default {
   props: {
@@ -90,6 +78,7 @@ header.scrolled {
   font-size: 24px;
   font-weight: bold;
   margin-right: auto;
+  color: #fff; /* Blanco */
 }
 
 .navbar-nav {
@@ -102,16 +91,11 @@ header.scrolled {
   margin-left: 20px;
 }
 
+/* Enlaces de navegación con colores invertidos */
 .nav-link {
-  border: 0;
-  background-image: linear-gradient(
-    150deg,
-    #f12711,
-    #f5af19,
-    #00ddff
-  );
+  background-color: #00bfff; /* Celeste para el fondo */
   border-radius: 8px;
-  color: #fff;
+  color: #ffffff; /* Blanco para el texto */
   display: inline-flex;
   align-items: center;
   font-size: 16px;
@@ -122,21 +106,23 @@ header.scrolled {
 }
 
 .nav-link span {
-  background-color: #111;
+  background-color: #ffffff; /* Blanco para el fondo interno */
   padding: 8px 16px;
   border-radius: 6px;
   transition: 0.3s;
+  color: #00bfff; /* Celeste para el texto */
 }
 
 .nav-link:hover span {
-  background: none;
+  background-color: #0077b3; /* Azul más oscuro al hacer hover */
+  color: #ffffff; /* Blanco para el texto en hover */
 }
 
 /* Botón "Regístrate" */
 .btn-register {
-  background-image: linear-gradient(150deg, #f12711, #f5af19, #00ddff);
+  background-color: #00bfff; /* Celeste */
   border-radius: 8px;
-  color: #fff;
+  color: #ffffff; /* Blanco */
   padding: 8px 16px;
   border: none;
   cursor: pointer;
@@ -144,13 +130,19 @@ header.scrolled {
 }
 
 .btn-register span {
-  background-color: #111;
+  background-color: #ffffff; /* Blanco para el fondo interno */
   padding: 8px 16px;
   border-radius: 6px;
+  color: #00bfff; /* Celeste */
+}
+
+.btn-register:hover {
+  background-color: #0077b3; /* Azul más oscuro */
 }
 
 .btn-register:hover span {
-  background: none;
+  background-color: transparent;
+  color: #ffffff; /* Blanco */
 }
 
 @media (max-width: 992px) {
