@@ -1,0 +1,23 @@
+{
+  "description": "Nos dedicamos a ofrecer una amplia gama de cursos en línea, diseñados para adaptarse a las necesidades de cada estudiante. Nuestro objetivo es proporcionar un aprendizaje accesible y de alta calidad, con herramientas que transforman la experiencia educativa.",
+  "features": [
+    {
+      "icon": "fas fa-user-edit",  
+      "title": "Cursos personalizables",
+      "description": "Ofrecemos programas de estudio adaptados a tus intereses y ritmo de aprendizaje",
+      "iconColor": "#4d1bc9"
+    },
+    {
+      "icon": "fas fa-hands-helping",  
+      "title": "Asesoría continua",
+      "description": "Nuestro equipo está disponible para guiarte en cada etapa de tu proceso educativo y responder a tus preguntas.",
+      "iconColor": "#25d366"
+    },
+    {
+      "icon": "fas fa-sync-alt",  
+      "title": "Actualización constante",
+      "description": "Trabajamos para mantener nuestros cursos actualizados, incorporando las últimas tendencias y tecnologías.",
+      "iconColor": "#c13584"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "categoryTitle": "Programación",
+      "services": [
+        {
+          "title": "Java para Principiantes",
+          "description": "Introducción a la programación con Java, cubriendo sintaxis básica y estructuras de control.",
+          "image": "programacionjava.jpeg"
+        },
+        {
+          "title": "C para Niños",
+          "description": "Curso diseñado para enseñar conceptos de programación a niños usando el lenguaje C.",
+          "image": "programacionc.jpeg"
+        },
+        {
+          "title": "Python para Principiantes",
+          "description": "Aprender los fundamentos de Python, incluyendo variables, funciones y estructuras de datos.",
+          "image": "programacionpython.jpeg"
+        },
+        {
+          "title": "Desarrollo Web para Principiantes",
+          "description": "Desarrollo de interfaces atractivas y accesibles centradas en mejorar la experiencia del usuario.",
+          "image": "programacionweb.jpeg"
+        },
+        {
+          "title": "Swift para Desarrollo de iOS",
+          "description": "Curso introductorio sobre programación en Swift para desarrollar aplicaciones en iOS.",
+          "image": "programacionswift.jpeg"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Matemáticas",
+      "services": [
+        {
+          "title": "Matemáticas para Niños (Edades 7-10)",
+          "description": "Un curso interactivo para enseñar conceptos matemáticos básicos como sumas, restas y multiplicaciones.",
+          "image": "cursoMatematicasNiño.jpeg"
+        },
+        {
+          "title": "Álgebra para Adolescentes:",
+          "description": "Diseño y optimización de bases de datos relacionales y no relacionales para un manejo eficiente de la información.",
+          "image": "CursoAlgebraAdo.jpeg"
+        },
+        {
+          "title": "Geometría Básica",
+          "description": "Configuración, mantenimiento y optimización de servidores y entornos de alojamiento.",
+          "image": "geometriabasica.jpeg"
+        },
+        {
+          "title": "Matemáticas Avanzadas para Preuniversitarios",
+          "description": "Curso que incluye cálculo y estadísticas para preparar a los estudiantes para la universidad.",
+          "image": "CursosPreuniversitarios.jpeg"
+        },
+        {
+          "title": "Matemáticas Financieras",
+          "description": "Curso que enseña conceptos de interés, inversión y presupuesto personal.",
+          "image": "cursoMatematicasFinancieras.jpeg"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Habilidades Creativas",
+      "services": [
+        {
+          "title": "Diseño Gráfico para Principiantes",
+          "description": "Introducción a herramientas de diseño gráfico como Canva o Photoshop.",
+          "image": "diseñografico.jpeg"
+        },
+        {
+          "title": "Fotografía Digital:",
+          "description": "Curso que enseña los fundamentos de la fotografía y edición de imágenes.",
+          "image": "cursoFotografia.jpeg"
+        },
+        {
+          "title": "Escritura Creativa",
+          "description": "Taller que fomenta la escritura de cuentos, poesía y otros géneros literarios.",
+          "image": "cursoescrituracreativa.jpeg"
+        },
+        {
+          "title": "Música para Todos",
+          "description": "Curso que introduce conceptos básicos de teoría musical y práctica de instrumentos.",
+          "image": "cursoGuitarra.jpeg"
+        },
+        {
+          "title": "Creación de Contenido para Redes Sociales",
+          "description": "Curso que enseña cómo generar contenido atractivo y estratégico para plataformas como Instagram, Facebook y TikTok.",
+          "image": "cursoCreacionredessociales.jpeg"
+        }
+      ]
+    }
+  ]
+}
+

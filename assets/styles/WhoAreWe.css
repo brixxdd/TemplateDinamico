@@ -1,0 +1,117 @@
+/* Importación de la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
+/* Contenedor principal */
+.whoarewe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 35px;
+  margin: 0 auto;
+  background-color: #2c3e50; /* Fondo oscuro para un look moderno */
+}
+
+/* Contenedor de la imagen y el texto */
+.image-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  background-color: #34495e; /* Fondo más oscuro para contraste */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Centramos el título */
+.section-title {
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ecf0f1; /* Texto claro para contraste */
+  text-align: center;
+}
+
+/* Descripción */
+.section-description {
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #bdc3c7;
+  text-align: center;
+}
+
+/* Características */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Cada característica */
+.feature {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #16a085; /* Color atractivo verde para resaltar */
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Íconos */
+.feature i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #f1c40f; /* Un color cálido que destaca */
+}
+
+/* Título de características */
+.feature-text h2 {
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Descripción de características */
+.feature-text p {
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #ecf0f1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .image-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-section img {
+    max-width: 100%;
+  }
+}
