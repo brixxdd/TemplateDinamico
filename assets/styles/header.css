@@ -1,0 +1,133 @@
+/* Estilos del header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    color: #fff;
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+  }
+  
+  /* Clase dinámica cuando el header es transparente */
+  header.transparent {
+    background-color: transparent; /* Sin fondo cuando no hay scroll */
+  }
+  
+  /* Clase dinámica cuando el usuario ha hecho scroll */
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro cuando hay scroll */
+  }
+  
+  /* Estilos del navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+  }
+  
+  .nav-item {
+    margin-left: 20px;
+  }
+  
+  .nav-link {
+    border: 0;
+    background-image: linear-gradient(150deg, #f12711, #f5af19, #00ddff);
+    border-radius: 8px;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  
+  .nav-link span {
+    background-color: #111;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover span {
+    background: none;
+  }
+  
+  /* Botón "Regístrate" */
+  .btn-register {
+    background-image: linear-gradient(150deg, #f12711, #f5af19, #00ddff);
+    border-radius: 8px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-register span {
+    background-color: #111;
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+  
+  .btn-register:hover span {
+    background: none;
+  }
+  
+  @media (max-width: 992px) {
+    .navbar-collapse {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      border-radius: 8px;
+      position: relative;
+      z-index: 999;
+      max-height: 80vh;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      overflow-y: auto;
+    }
+  
+    .navbar-collapse.show {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-item {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .btn-register {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  
+  body {
+    padding-top: 80px;
+  }
+  
