@@ -6,27 +6,27 @@
         {
           "title": "Java para Principiantes",
           "description": "Introducción a la programación con Java, cubriendo sintaxis básica y estructuras de control.",
-          "image": "programacionjava.jpeg"
+          "image": "https://media.istockphoto.com/id/1131109259/es/foto/concepto-de-programaci%C3%B3n-java-m%C3%A1quina-virtual-en-el-fondo-de-la-sala-de-servidores.jpg?s=2048x2048&w=is&k=20&c=ulW4Ycv0KWvRBAjNl7yaYwcHi1eL7AvBqemfbQBBVB0="
         },
         {
           "title": "C para Niños",
           "description": "Curso diseñado para enseñar conceptos de programación a niños usando el lenguaje C.",
-          "image": "programacionc.jpeg"
+          "image": "https://media.istockphoto.com/id/1422787212/es/foto/ejemplo-de-c%C3%B3digo-fuente-del-lenguaje-de-programaci%C3%B3n-c-sharp-en-el-monitor-c%C3%B3digo-fuente-de-c.jpg?s=2048x2048&w=is&k=20&c=uhdkRpcrDDKcXywoXwX-PZkQc948DH0CTU1E4NhdyxY="
         },
         {
           "title": "Python para Principiantes",
           "description": "Aprender los fundamentos de Python, incluyendo variables, funciones y estructuras de datos.",
-          "image": "programacionpython.jpeg"
+          "image": "https://media.istockphoto.com/id/1284202542/es/vector/lenguaje-de-programaci%C3%B3n-python-estandarte-conceptual-educaci%C3%B3n-codificando-lenguaje.jpg?s=2048x2048&w=is&k=20&c=cl54S9jD0X56NjwwltNitBseHvcpP9xe1OulYGlM9-A="
         },
         {
           "title": "Desarrollo Web para Principiantes",
           "description": "Desarrollo de interfaces atractivas y accesibles centradas en mejorar la experiencia del usuario.",
-          "image": "programacionweb.jpeg"
+          "image": "https://media.istockphoto.com/id/1503858430/es/vector/concepto-de-desarrollo-de-software-de-sitios-web-sitio-de-dise%C3%B1o-web-y-aplicaci%C3%B3n-m%C3%B3vil-en.jpg?s=2048x2048&w=is&k=20&c=PMyXv1ztAOcrhS9ZMsGRsgWc6COCWXx4jwFzbT_cq7w="
         },
         {
           "title": "Swift para Desarrollo de iOS",
           "description": "Curso introductorio sobre programación en Swift para desarrollar aplicaciones en iOS.",
-          "image": "programacionswift.jpeg"
+          "image": "https://media.istockphoto.com/id/1579772994/es/foto/swift-sociedad-para-las-telecomunicaciones-financieras-interbancarias-mundiales.jpg?s=2048x2048&w=is&k=20&c=hoTtgKeg47Yd6tURIcqy1gaKhhrh0Rth-RRalxlaH20="
         }
       ]
     },
@@ -36,27 +36,27 @@
         {
           "title": "Matemáticas para Niños (Edades 7-10)",
           "description": "Un curso interactivo para enseñar conceptos matemáticos básicos como sumas, restas y multiplicaciones.",
-          "image": "cursoMatematicasNiño.jpeg"
+          "image": "https://media.istockphoto.com/id/1213548268/es/vector/chico-leyendo-libro-de-texto.jpg?s=2048x2048&w=is&k=20&c=Jx0BpyxDrO6j7rmZV9vZCLFWDfEeWW0GMyWlB_Bda6c="
         },
         {
           "title": "Álgebra para Adolescentes:",
           "description": "Diseño y optimización de bases de datos relacionales y no relacionales para un manejo eficiente de la información.",
-          "image": "CursoAlgebraAdo.jpeg"
+          "image": "https://media.istockphoto.com/id/1370390878/es/vector/conjunto-de-iconos-de-s%C3%ADmbolos-matem%C3%A1ticos-dise%C3%B1o-de-garabatos-de-asignaturas-de-%C3%A1lgebra-o.jpg?s=2048x2048&w=is&k=20&c=D0rgo2NOXvbS1w9ET-z5iYApyBtxhYViH9nNHw1j2KA="
         },
         {
           "title": "Geometría Básica",
           "description": "Configuración, mantenimiento y optimización de servidores y entornos de alojamiento.",
-          "image": "geometriabasica.jpeg"
+          "image": "https://media.istockphoto.com/id/1475645887/es/foto/tarea-o-examen-de-matem%C3%A1ticas.jpg?s=2048x2048&w=is&k=20&c=kbVQVFCb-BvRGjg7doR2IoP1ig4RulLxcTDKcAtRQI8="
         },
         {
           "title": "Matemáticas Avanzadas para Preuniversitarios",
           "description": "Curso que incluye cálculo y estadísticas para preparar a los estudiantes para la universidad.",
-          "image": "CursosPreuniversitarios.jpeg"
+          "image": "https://media.istockphoto.com/id/1271635533/es/foto/concepto-de-tecnolog%C3%ADa-cient%C3%ADfica-estudiando-chica-asi%C3%A1tica-educaci%C3%B3n-edtech.jpg?s=2048x2048&w=is&k=20&c=rHLh9GZfluHJGIj7Ls4i28FFQO_-yPTNhivOmALKTtM="
         },
         {
           "title": "Matemáticas Financieras",
           "description": "Curso que enseña conceptos de interés, inversión y presupuesto personal.",
-          "image": "cursoMatematicasFinancieras.jpeg"
+          "image": "https://media.istockphoto.com/id/1129810557/es/foto/auditor%C3%ADas-de-negocios-utilizando-un-fondo-de-inversi%C3%B3n-de-datos-financieros-de-calculadora-en.jpg?s=2048x2048&w=is&k=20&c=ZuMO3gdGTWXh5m0Hz_YuuotT1L9LZmxiVmiLPRp-0rE="
         }
       ]
     },
@@ -66,27 +66,27 @@
         {
           "title": "Diseño Gráfico para Principiantes",
           "description": "Introducción a herramientas de diseño gráfico como Canva o Photoshop.",
-          "image": "diseñografico.jpeg"
+          "image": "https://media.istockphoto.com/id/1415537875/es/foto/dise%C3%B1ador-gr%C3%A1fico-asi%C3%A1tico-trabajando-en-oficina-artista-dise%C3%B1ador-creativo-ilustrador.jpg?s=2048x2048&w=is&k=20&c=zi5TdC6hJJESD1CQHwvwvE1uCMso4zavRGxxhktAdeg="
         },
         {
           "title": "Fotografía Digital:",
           "description": "Curso que enseña los fundamentos de la fotografía y edición de imágenes.",
-          "image": "cursoFotografia.jpeg"
+          "image": "https://media.istockphoto.com/id/618066222/es/foto/captura-de-c%C3%A1maras-de-un-bosque.jpg?s=2048x2048&w=is&k=20&c=PLKKVvtUoELMvrCegWD2w2g_m68z-rmRcXMG2ntv6Os="
         },
         {
           "title": "Escritura Creativa",
           "description": "Taller que fomenta la escritura de cuentos, poesía y otros géneros literarios.",
-          "image": "cursoescrituracreativa.jpeg"
+          "image": "https://media.istockphoto.com/id/1422040090/es/foto/dise%C3%B1o-abstracto-con-fondo-de-letras.jpg?s=2048x2048&w=is&k=20&c=sxU_oQUaB3phAJxqIt9XOyHJ8MB-bUG10Ynu9iDCxx8="
         },
         {
           "title": "Música para Todos",
           "description": "Curso que introduce conceptos básicos de teoría musical y práctica de instrumentos.",
-          "image": "cursoGuitarra.jpeg"
+          "image": "https://media.istockphoto.com/id/1076840920/es/vector/fondo-de-m%C3%BAsica.jpg?s=2048x2048&w=is&k=20&c=1dN2AvKSmOcDNAlJ5XssxgB4C_Itf2AnKzky9-dcdYk="
         },
         {
           "title": "Creación de Contenido para Redes Sociales",
           "description": "Curso que enseña cómo generar contenido atractivo y estratégico para plataformas como Instagram, Facebook y TikTok.",
-          "image": "cursoCreacionredessociales.jpeg"
+          "image": "https://media.istockphoto.com/id/1201069511/es/foto/mano-de-hombre-de-negocios-utilizando-port%C3%A1til-con-icono-de-redes-sociales-y-redes-sociales.jpg?s=2048x2048&w=is&k=20&c=waYMBumnoqoULF4Myo-ax1Gwp7Va-MeYJCsguDdlMKI="
         }
       ]
     }
