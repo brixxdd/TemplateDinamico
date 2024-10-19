@@ -1,13 +1,8 @@
 <template>
   <div class="whoarewe-container">
-    <div class="image-content-wrapper animate-on-scroll">
-      <div class="image-section">
-        <img src="/Compu2.png" alt="Laptop Image" />
-      </div>
-      <div class="content-section">
-        <h1 class="section-title">Nosotros!!</h1>
-        <p class="section-description">{{ data.description }}</p>
-      </div>
+    <div class="content-section">
+      <h1 class="section-title">Nosotros!!</h1>
+      <p class="section-description">{{ data.description }}</p>
     </div>
     <div class="features">
       <div v-for="(feature, index) in data.features" :key="index" class="feature animate-on-scroll">
@@ -33,6 +28,7 @@ export default {
   }
 };
 </script>
+
 <style>
 @import '@/assets/styles/WhoAreWe.css';
 
@@ -50,10 +46,6 @@ export default {
 /* Ajusta estos estilos según tus preferencias */
 .whoarewe-container {
   overflow: hidden;
-}
-
-.image-content-wrapper {
-  transition-delay: 0.2s;
 }
 
 .feature {

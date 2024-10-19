@@ -13,15 +13,12 @@
     "textColor": "#EEEEEE"
   },
   "zoneContact": {
-    "contact-container-backgroundColor-gradient1": "#FF9800", 
-    "contact-container-backgroundColor-gradient2": "#F57C00", 
-    "contact-info-backgroundColor": "rgba(28, 28, 28, 0.8)",
-    "textPrincipal": "#FFFFFF",
-    "textPrincipal-borde": "#FFAB91", 
-    "texto-p": "#F5F5F5",
-    "gradient1": "rgba(255, 183, 77, 0.6)", 
-    "gradient2": "rgba(255, 138, 101, 0.6)", 
-    "button": "linear-gradient(to right, #FFC107, #FF9800)"
+    "contact-container-backgroundColor-gradient1": "#3b82f6",
+    "contact-container-backgroundColor-gradient2": "#60a5fa", 
+    "textPrincipal": "#ffffff",
+    "texto-p": "#e0f2fe", 
+    "gradient1": "#3b82f6",
+    "gradient2": "#60a5fa" 
   },
   "services": {
     "Servicios Frontend": {

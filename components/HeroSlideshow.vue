@@ -41,24 +41,25 @@ export default {
       modules: [EffectCube, Autoplay],
       slides: [
   {
-    imageSrc: '/imagen1.jpg',
-    title: "Descubre el Aprendizaje en Línea",
-    description: "¡Explora un mundo de aprendizaje en línea! Adquiere nuevas habilidades desde la comodidad de tu hogar.",
+    imageSrc: 'https://images.unsplash.com/photo-1522881193457-37ae97c905bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: "Descubre el Aprendizaje en Línea",
+        description: "¡Explora un mundo de aprendizaje en línea! Adquiere nuevas habilidades desde la comodidad de tu hogar.",
+   
   },
   {
-    imageSrc: '/imagen2.jpg',
-    title: "Conocimiento al Alcance de un Clic",
-    description: "Con nuestros cursos en línea, el conocimiento está al alcance de un clic. ¡Empieza tu aventura educativa hoy!",
+    imageSrc: 'https://images.unsplash.com/photo-1605711285791-0219e80e43a3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: "Conocimiento al Alcance de un Clic",
+        description: "Con nuestros cursos en línea, el conocimiento está al alcance de un clic. ¡Empieza tu aventura educativa hoy!",
   },
   {
-    imageSrc: '/imagen3.jpg',
-    title:  "Aprende a tu Ritmo",
-    description: "Aprende a tu ritmo y conviértete en un experto en temas que te apasionan, ¡todo a través de nuestra plataforma en línea!",
+    imageSrc: 'https://plus.unsplash.com/premium_photo-1664285864903-8f7daf0eb3a9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: "Aprende a tu Ritmo",
+        description: "Aprende a tu ritmo y conviértete en un experto en temas que te apasionan, ¡todo a través de nuestra plataforma en línea!",
   },
   {
-    imageSrc: '/imagen4.jpg',
-    title:  "Aprendizaje Innovador",
-    description: "¡Conéctate con un aprendizaje innovador! Desarrolla tus habilidades y prepárate para el futuro desde casa.",
+    imageSrc: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: "Aprendizaje Innovador",
+        description: "¡Conéctate con un aprendizaje innovador! Desarrolla tus habilidades y prepárate para el futuro desde casa.",
   },
 ]
 
@@ -105,8 +106,8 @@ body {
 }
 
 .slide-image {
-  width: 90%;     /* Ocupa todo el ancho del contenedor */
-  height: 90%;    /* Ocupa todo el alto del contenedor */
+  width: 100%;     /* Ocupa todo el ancho del contenedor */
+  height: 100%;    /* Ocupa todo el alto del contenedor */
   object-fit: cover; /* Escala y recorta la imagen si es necesario, para llenar el contenedor */
   z-index: 1;
 }

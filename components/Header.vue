@@ -1,7 +1,10 @@
 <template>
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">CURSOS EN LINEA </a>
+      <a class="navbar-brand" href="#">
+        <img src="https://plus.unsplash.com/premium_photo-1674571895797-3ca2aaf89eed?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Logo" class="logo" />
+        Educación que se adapta a ti
+      </a>
       <!-- Botón de menú (hamburguesa) visible solo en pantallas pequeñas -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,8 +80,15 @@ header.scrolled {
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  color: #d21436; /* Amarillo brillante */
-  margin-right: auto;
+  color: #D3D3D3; /* Amarillo brillante */
+  display: flex;
+  align-items: center; /* Centrar verticalmente el logo y el texto */
+}
+
+.logo {
+  width: 50px; /* Ajusta el tamaño a 45px */
+  height: 50px; /* Ajusta el tamaño a 45px */
+  margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
 .navbar-nav {
@@ -92,7 +102,7 @@ header.scrolled {
 }
 
 .nav-link {
-  background-image: linear-gradient(150deg, #FF6F61, #FFB74D, #64B5F6); /* Gradiente llamativo */
+  background-image: linear-gradient(150deg, #64B5F6, #1976D2, #FFFFFF); /* Gradiente llamativo */
   border-radius: 8px;
   color: #fff;
   display: inline-flex;
