@@ -32,39 +32,5 @@ export default {
 <style>
 @import '@/assets/styles/WhoAreWe.css';
 
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Ajusta estos estilos según tus preferencias */
-.whoarewe-container {
-  overflow: hidden;
-}
-
-.feature {
-  transition-delay: 0.1s;
-}
-
-.feature:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.feature:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-/* Asegura que la transición se aplique en ambas direcciones */
-.animate-on-scroll,
-.animate-on-scroll.is-visible {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Puedes añadir más estilos específicos aquí si es necesario */
+/* Aquí puedes mantener las animaciones como están */
 </style>
