@@ -1,0 +1,25 @@
+{
+    "services": [
+      {
+        "title": "Reparación Integral de Computadoras",
+        "description": "Nos especializamos en la reparación integral de computadoras...",
+        "image": "imagen1.png"
+      },
+      {
+        "title": "Mantenimiento Preventivo",
+        "description": "Además de la reparación, ofrecemos servicios de mantenimiento preventivo...",
+        "image": "imagen2.jpg"
+      },
+      {
+        "title": "Asistencia Técnica Personalizada",
+        "description": "Entendemos que cada cliente tiene necesidades únicas...",
+        "image": "imagen3.jpg"
+      },
+      {
+        "title": "Reparación de Dispositivos Móviles",
+        "description": "También ofrecemos reparación de dispositivos móviles...",
+        "image": "imagen4.jpg"
+      }
+    ]
+  }
+  
