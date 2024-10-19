@@ -28,17 +28,44 @@ const styles = {
 };
 </script>
 
-
 <template>
     <div class="container-principal animate-on-scroll">
-        <!-- Itera sobre las categorías -->
-        <div v-for="category in serviceCategories" :key="category.categoryTitle" class="py-5" :style="styles.container(category.categoryTitle)">
-            <h1 class="text-center">{{ category.categoryTitle }}</h1>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-5 py-5 px-1">
+        <div v-for="category in serviceCategories" :key="category.categoryTitle" class="category-container py-5" :style="styles.container(category.categoryTitle)">
+            <h1 class="text-center category-title">{{ category.categoryTitle }}</h1>
+            <div class="card-grid">
                 <Card v-for="service in category.services" :key="service.title" :service="service" />
             </div>
         </div>
     </div>
 </template>
 
-<style scope src="@/assets/styles/Services.css"></style>
+<style scoped>
+.container-principal {
+  padding: 20px;
+}
+
+.category-container {
+  margin: 30px 0;
+}
+
+.category-title {
+  font-size: 2em; /* Aumentar el tamaño del título de la categoría */
+  margin-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tarjetas en cuadrícula con un mínimo de 250px */
+  gap: 15px; /* Espacio entre tarjetas */
+}
+
+/* Estilos adicionales para las tarjetas */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición suave */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+</style>
