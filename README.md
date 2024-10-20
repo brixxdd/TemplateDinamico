@@ -1,5 +1,5 @@
-# titulo del proyecto
-TemplateDinamico
+# TemplateDinamico
+
 Este proyecto es una landing page dinámica construida con Nuxt 3, diseñada para ofrecer servicios de creación de aplicaciones a medida, tanto empresariales como multiplataforma, y landing pages de uso fácil. La página está enfocada en promocionar estos servicios, permitiendo que los usuarios se pongan en contacto para solicitar soluciones personalizadas.
 
 # tabla de contenidos
