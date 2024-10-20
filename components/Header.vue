@@ -2,7 +2,15 @@
   <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
+        <!-- Mostrar texto si useTextInsteadOfLogo es true -->
+        <span 
+          v-if="headerData.useTextInsteadOfLogo" 
+          :style="{ color: headerData.logoTextColor }"  
+        >
+          {{ headerData.logoText }}
+        </span>
         <img 
+          v-else 
           :src="headerData.logoUrl" 
           alt="Logo" 
           style="height: 40px;" 

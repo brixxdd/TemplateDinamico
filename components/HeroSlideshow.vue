@@ -1,20 +1,19 @@
 <template>
   <swiper
-    :effect="'cube'"
+    :effect="currentEffect"
     :cubeEffect="{ slideShadows: true, shadowOffset: 20, shadowScale: 0.94 }"
     :slidesPerView="1"
     :spaceBetween="30"
     :loop="true"
     :autoplay="{
-      delay: 5000,
-      disableOnInteraction: false,
+      delay: autoplayDelay,
+      disableOnInteraction: false
     }"
     :modules="modules"
     class="mySwiper"
   >
     <swiper-slide v-for="(slide, index) in slides" :key="index">
       <div class="slide-content">
-        <!-- Cambié el video por imágenes -->
         <img class="slide-image" :src="slide.imageSrc" alt="Imagen del slide" />
         <div class="slide-caption">
           <h2 class="slide-title">{{ slide.title }}</h2>
@@ -29,39 +28,42 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
-import { EffectCube, Autoplay } from 'swiper/modules';
+import 'swiper/css/effect-fade';
+import 'swiper/css/effect-flip';
+import { EffectCube, EffectFade, EffectFlip, Autoplay } from 'swiper/modules';
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
   },
-  setup() {
+  data() {
     return {
-      modules: [EffectCube, Autoplay],
-      slides: [
-        {
-          imageSrc: '/imagen1.jpg',
-          title: '¡Revive tu Computadora!',
-          description: 'Dale una nueva vida a tu equipo con reparaciones profesionales y optimizaciones que mejoran su rendimiento y prolongan su vida útil.',
-        },
-        {
-          imageSrc: '/imagen2.jpg',
-          title: '¡Soluciones Móviles para Cada Necesidad!',
-          description: 'Desde la reparación de smartphones hasta la actualización de software, aseguramos que tu dispositivo móvil funcione como nuevo.',
-        },
-        {
-          imageSrc: '/imagen3.jpg',
-          title: '¡Recuperación de Datos Rápida y Segura!',
-          description: 'No pierdas la esperanza en tus archivos valiosos. Nuestros expertos utilizan técnicas avanzadas para recuperar datos perdidos de manera eficiente.',
-        },
-        {
-          imageSrc: '/imagen4.jpg',
-          title: '¡Mantén tu Software Actualizado!',
-          description: 'Te ayudamos a mantener tu sistema operativo y aplicaciones al día, garantizando la seguridad y el rendimiento óptimo de tus dispositivos.',
-        },
-      ],
+      slides: [],
+      autoplayDelay: 0, // Se inicializa a 0, se llenará con el JSON
+      currentEffect: '', // Se inicializa vacía, se llenará con el JSON
+      modules: [EffectCube, EffectFade, EffectFlip, Autoplay],
     };
+  },
+  async created() {
+    try {
+      const response = await fetch('/data/heroSlideshow.json');
+      const data = await response.json();
+
+      this.slides = data.slides;
+      this.autoplayDelay = data.autoplayDelay;
+
+      // Determina cuál efecto está activado
+      if (data.effect.cube) {
+        this.currentEffect = 'cube';
+      } else if (data.effect.fade) {
+        this.currentEffect = 'fade';
+      } else if (data.effect.flip) {
+        this.currentEffect = 'flip';
+      }
+    } catch (error) {
+      console.error('Error loading heroSlideshow.json:', error);
+    }
   },
 };
 </script>
