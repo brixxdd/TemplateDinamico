@@ -110,4 +110,36 @@ public/data/colors.json
 public/data/contacto.json
 
 public/data/services.json
+
+# Manual de Uso para Configuración de Estilos
+
+Este documento describe cómo personalizar los estilos de tu landing page utilizando el archivo de configuración JSON. Este archivo permite ajustar colores y fondos de diferentes secciones, como el encabezado, el pie de página y la zona de contacto.
+
+## Estructura del Archivo JSON
+
+El archivo de configuración JSON está dividido en tres secciones principales: `header`, `footer` y `zoneContact`.
+
+### 1. Encabezado (`header`)
+
+La sección del encabezado permite personalizar los colores y estilos relacionados con la barra de navegación y el fondo del encabezado.
+
+- **`backgroundColor`**: Color de fondo del encabezado (usualmente transparente por defecto).
+- **`scrolledBackgroundColor`**: Color de fondo cuando la página es desplazada.
+- **`navLinkColor`**: Color de los enlaces de navegación.
+- **`navLinkBackgroundColor`**: Color de fondo de los enlaces de navegación.
+- **`navLinkHoverBackgroundColor`**: Color de fondo de los enlaces de navegación al pasar el cursor sobre ellos.
+- **`buttonRegisterBackgroundColor`**: Color de fondo del botón de registro.
+- **`buttonRegisterHoverBackgroundColor`**: Color de fondo del botón de registro al pasar el cursor sobre él.
+
+### Ejemplo:
+```json
+"header": {
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "scrolledBackgroundColor": "#01257D",
+  "navLinkColor": "#ff5c35",
+  "navLinkBackgroundColor": "#ffffff",
+  "navLinkHoverBackgroundColor": "#00796b",
+  "buttonRegisterBackgroundColor": "#F57313",
+  "buttonRegisterHoverBackgroundColor": "#00796b"
+}
 ```
