@@ -46,25 +46,24 @@ export default {
     };
   },
   async created() {
-    try {
-      const response = await fetch('/data/heroSlideshow.json');
-      const data = await response.json();
+  try {
+    const data = await import('~/public/data/heroSlideshow.json');
+    
+    this.slides = data.slides;
+    this.autoplayDelay = data.autoplayDelay;
 
-      this.slides = data.slides;
-      this.autoplayDelay = data.autoplayDelay;
-
-      // Determina cuál efecto está activado
-      if (data.effect.cube) {
-        this.currentEffect = 'cube';
-      } else if (data.effect.fade) {
-        this.currentEffect = 'fade';
-      } else if (data.effect.flip) {
-        this.currentEffect = 'flip';
-      }
-    } catch (error) {
-      console.error('Error loading heroSlideshow.json:', error);
+    // Determina cuál efecto está activado
+    if (data.effect.cube) {
+      this.currentEffect = 'cube';
+    } else if (data.effect.fade) {
+      this.currentEffect = 'fade';
+    } else if (data.effect.flip) {
+      this.currentEffect = 'flip';
     }
-  },
+  } catch (error) {
+    console.error('Error loading heroSlideshow.json:', error);
+  }
+},
 };
 </script>
 

@@ -1,5 +1,37 @@
+
+Para restaurar el efecto de cambio de color en el header al hacer scroll, debes asegurarte de que enableScrolledBackground siga funcionando correctamente. Además, necesitamos mantener la opción de activación/desactivación del gradiente en los enlaces de navegación.
+
+Aquí te dejo el código corregido para que ambos efectos funcionen al mismo tiempo:
+
+Modificaciones en el archivo header.json:
+json
+Copiar código
+{
+  "useTextInsteadOfLogo": false,
+  "logoUrl": "https://cdn.pixabay.com/photo/2016/04/01/00/22/cat-1298141_1280.png",
+  "logoText": "DevPilots",
+  "logoTextColor": "white",
+  "buttonNames": {
+    "inicio": "Inicio",
+    "quienes-somos": "Nosotros",
+    "nuestros-servicios": "Servicios",
+    "contacto": "Contacto"
+  },
+  "navLinkStyles": {
+    "enableGradient": true,
+    "backgroundGradient": "linear-gradient(150deg, #020242, #01257D, #00A9FF)",
+    "textColor": "#fff",
+    "borderRadius": "8px",
+    "fontSize": "16px",
+    "padding": "8px",
+    "hoverBackgroundColor": "#111"
+  }
+}
+Modificaciones en el archivo Header.vue:
+vue
+Copiar código
 <template>
-  <header :class="{ transparent: !isScrolled, scrolled: isScrolled }" :style="headerStyle">
+  <header :class="{ transparent: !isScrolled, scrolled: isScrolled && enableScrolledBackground }" :style="headerStyle">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
         <!-- Mostrar texto si useTextInsteadOfLogo es true -->
@@ -24,16 +56,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#inicio"><span>{{ headerData.buttonNames.inicio }}</span></a>
+            <a class="nav-link" href="#inicio" :style="navLinkStyle"><span>{{ headerData.buttonNames.inicio }}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#quienes-somos"><span>{{ headerData.buttonNames["quienes-somos"] }}</span></a>
+            <a class="nav-link" href="#quienes-somos" :style="navLinkStyle"><span>{{ headerData.buttonNames['quienes-somos'] }}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#nuestros-servicios"><span>{{ headerData.buttonNames["nuestros-servicios"] }}</span></a>
+            <a class="nav-link" href="#nuestros-servicios" :style="navLinkStyle"><span>{{ headerData.buttonNames['nuestros-servicios'] }}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contacto"><span>{{ headerData.buttonNames.contacto }}</span></a>
+            <a class="nav-link" href="#contacto" :style="navLinkStyle"><span>{{ headerData.buttonNames.contacto }}</span></a>
           </li>
         </ul>
       </div>
@@ -43,25 +75,35 @@
 
 <script>
 import colors from '@/public/data/colors.json';
-import headerData from '@/public/data/header.json'; // Importa el header.json
+import headerData from '@/public/data/header.json'; 
 
 export default {
   props: {
-    isScrolled: Boolean,
-    logoUrl: {
-      type: String,
-      default: '/logo.png' // Valor por defecto si no se pasa ningún logo
-    }
+    isScrolled: Boolean
   },
   data() {
     return {
-      headerData // Almacena los datos del header.json
+      headerData, 
+      enableScrolledBackground: colors.header.enableScrolledBackground
     };
   },
   computed: {
     headerStyle() {
       return {
-        backgroundColor: this.isScrolled ? colors.header.scrolledBackgroundColor : colors.header.backgroundColor,
+        backgroundColor: this.isScrolled && this.enableScrolledBackground
+          ? colors.header.scrolledBackgroundColor
+          : colors.header.backgroundColor,
+      };
+    },
+    navLinkStyle() {
+      return {
+        backgroundImage: this.headerData.navLinkStyles.enableGradient
+          ? this.headerData.navLinkStyles.backgroundGradient
+          : 'none',
+        color: this.headerData.navLinkStyles.textColor,
+        borderRadius: this.headerData.navLinkStyles.borderRadius,
+        fontSize: this.headerData.navLinkStyles.fontSize,
+        padding: this.headerData.navLinkStyles.padding,
       };
     }
   }
@@ -69,8 +111,7 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos del header y navbar */
-
+/* Estilos generales del header y navbar */
 header {
   position: fixed;
   top: 0;
@@ -109,20 +150,6 @@ header.scrolled {
 
 .nav-item {
   margin-left: 20px;
-}
-
-.nav-link {
-  border: 0;
-  background-image: linear-gradient(150deg, #020242, #01257D, #00A9FF);
-  border-radius: 8px;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  font-size: 16px;
-  padding: 4px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
 }
 
 .nav-link span {

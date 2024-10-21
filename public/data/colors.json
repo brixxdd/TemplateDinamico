@@ -6,22 +6,22 @@
     "navLinkBackgroundColor": "#ffffff",
     "navLinkHoverBackgroundColor": "#00796b",
     "buttonRegisterBackgroundColor": "#F57313",
-    "buttonRegisterHoverBackgroundColor": "#00796b"
+    "buttonRegisterHoverBackgroundColor": "#00796b",
+    "enableScrolledBackground": true 
   },
   "footer": {
     "backgroundColor": "#192733",
     "textColor": "#ffffff"
   },
-"zoneContact": {
-  "contact-container-backgroundColor-gradient1": "#0A1E5E",
-  "contact-container-backgroundColor-gradient2": "F5F8FF  ",
-  "contact-info-backgroundColor": "rgba(1, 37, 125, 0.8)",
-  "textPrincipal": "rgba(255, 255, 255, 0.9)",
-  "textPrincipal-borde": "rgb(180, 180, 180)",
-  "texto-p": "#E0E0E0",
-  "gradient1": "rgba(1, 37, 125, 0.7)",
-  "gradient2": "rgba(20, 57, 140, 0.7)",
-  "button": "linear-gradient(to right, #01257D, )"
-}
-
+  "zoneContact": {
+    "contact-container-backgroundColor-gradient1": "#0A1E5E",
+    "contact-container-backgroundColor-gradient2": "F5F8FF",
+    "contact-info-backgroundColor": "rgba(1, 37, 125, 0.8)",
+    "textPrincipal": "rgba(255, 255, 255, 0.9)",
+    "textPrincipal-borde": "rgb(180, 180, 180)",
+    "texto-p": "#E0E0E0",
+    "gradient1": "rgba(1, 37, 125, 0.7)",
+    "gradient2": "rgba(20, 57, 140, 0.7)",
+    "button": "linear-gradient(to right, #01257D)"
+  }
 }

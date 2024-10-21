@@ -8,5 +8,14 @@
     "quienes-somos": "Nosotros",
     "nuestros-servicios": "Servicios",
     "contacto": "Contacto"
+  },
+  "navLinkStyles": {
+    "enableGradient": true,
+    "backgroundGradient": "linear-gradient(150deg, #020242, #01257D, #00A9FF)",
+    "textColor": "#fff",
+    "borderRadius": "8px",
+    "fontSize": "16px",
+    "padding": "8px",
+    "hoverBackgroundColor": "#111"
   }
 }

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import data from '@/assets/styles/WhoAreWe.json';
+import data from '@/public/data/WhoAreWe.json';
 
 export default {
   name: 'WhoAreWe',
@@ -31,10 +31,10 @@ export default {
       data,
     };
   }
-};
+};  
 </script>
 <style>
-@import '@/assets/styles/WhoAreWe.css';
+@import '@/public/data/WhoAreWe.css';
 
 .animate-on-scroll {
   opacity: 0;
