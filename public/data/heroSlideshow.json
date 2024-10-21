@@ -1,0 +1,62 @@
+{
+    "effect": {
+    "cube": true,
+    "fade": false,
+    "flip": false,
+    "coverflow": false,
+    "creative": false
+  },
+    "autoplayDelay": 5000,
+    "slides": [
+        {
+          "imageSrc": "/reloj_hombre_portada.jpg",
+          "videoSrc": "",
+          "title": "Estilo y precisión en tu muñeca:",
+          "description": "El reloj perfecto para cada hombre",
+          "delay": 2000
+        },
+        {
+          "imageSrc": "/reloj_dama_portada.jpeg",
+          "videoSrc": "",
+          "title": "Elegancia atemporal para ellas:",
+          "description": "Descubre nuestra colección de relojes femeninos",
+          "delay": 4000
+        },
+        {
+          "imageSrc": "/reloj_juvenil_portada.jpeg",
+          "videoSrc": "",
+          "title": "Tu asistente personal en un solo toque:",
+          "description": "Smartwatches que te mantienen conectado",
+          "delay": 6000
+        },
+        {
+          "imageSrc": "/reloj_smartwatch_portada.jpeg",
+          "videoSrc": "",
+          "title": "Innovación y estilo juvenil:",
+          "description": "Relojes modernos que marcan tendencia",
+          "delay": 2000
+        },
+        {
+          "imageSrc": "https://www.somosmamas.com.ar/wp-content/uploads/2019/02/reloj-kairos-vincero-luxury-para-hombre-oro-rosa-con-banda-D_NQ_NP_851431-MLA26799504792_022018-F.jpg",
+          "videoSrc": "",
+          "title": "Encuentra tu estilo:",
+          "description": "Nunca digas nunca",
+          "delay": 500
+        },
+        {
+          "imageSrc": "",
+          "videoSrc": "https://www.breguet.com/sites/default/files/2024-10/Breguet%20complications_light.mp4",
+          "title": "La excelencia:",
+          "description": "Alta relojeria",
+          "delay": 10000
+        },
+        {
+          "imageSrc": "",
+          "videoSrc": "https://www.breguet.com/sites/default/files/2024-10/BREGUET_MATERIAUX_ligth.mp4",
+          "title": "Cantidad o calidad:",
+          "description": "Alta calidad en nuestros productos",
+          "delay": 15000
+        }
+      ]
+  }
+  
